@@ -1,0 +1,133 @@
+### Base URL
+@gateway = http://localhost:8080
+
+### ------------------------------------------------------------
+### 1. Health checks
+### ------------------------------------------------------------
+
+GET {{gateway}}/actuator/health
+
+###
+GET http://localhost:8081/actuator/health
+
+###
+GET http://localhost:8082/actuator/health
+
+###
+GET http://localhost:8083/actuator/health
+
+### ------------------------------------------------------------
+### 2. Create inventory
+### Expected: 201 Created
+### MongoDB: inventory_items gets productId=101 with available=10 reserved=0
+### ------------------------------------------------------------
+
+POST {{gateway}}/api/inventory
+Content-Type: application/json
+
+{
+  "productId": 101,
+  "productName": "iPhone 15",
+  "availableQuantity": 10
+}
+
+### Check inventory state
+GET {{gateway}}/api/inventory/101
+
+### Check availability
+GET {{gateway}}/api/inventory/101/availability
+
+### ------------------------------------------------------------
+### 3. Create user
+### Expected: 201 Created
+### MySQL userdb.users gets one record
+### ------------------------------------------------------------
+
+POST {{gateway}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Rahul",
+  "email": "rahul@example.com",
+  "address": "Bangalore"
+}
+
+### Fetch user
+GET {{gateway}}/api/users/1
+
+### ------------------------------------------------------------
+### 4. Place order
+### Expected immediate response: status CREATED
+### MySQL orderdb.orders gets one record
+### Kafka: order-service publishes to topic order-created
+### ------------------------------------------------------------
+
+POST {{gateway}}/api/orders
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "productId": 101,
+  "quantity": 2,
+  "unitPrice": 49999.00
+}
+
+### ------------------------------------------------------------
+### 5. Check order after Kafka processing
+### Wait 2-5 seconds before running this request
+### Expected final status: STOCK_CONFIRMED
+### Kafka: inventory-service consumes order-created and publishes stock-updated
+### MongoDB: availableQuantity goes 10 -> 8, reservedQuantity goes 0 -> 2
+### ------------------------------------------------------------
+
+GET {{gateway}}/api/orders/1
+
+### Orders by user through user-service -> order-service Feign call
+GET {{gateway}}/api/users/1/orders
+
+### Orders directly from order-service route through gateway
+GET {{gateway}}/api/orders/user/1
+
+### ------------------------------------------------------------
+### 6. Negative test: duplicate user
+### Expected: error response
+### ------------------------------------------------------------
+
+POST {{gateway}}/api/users
+Content-Type: application/json
+
+{
+  "name": "Rahul",
+  "email": "rahul@example.com",
+  "address": "Bangalore"
+}
+
+### ------------------------------------------------------------
+### 7. Negative test: invalid user
+### Expected: user not found error
+### ------------------------------------------------------------
+
+POST {{gateway}}/api/orders
+Content-Type: application/json
+
+{
+  "userId": 999,
+  "productId": 101,
+  "quantity": 1,
+  "unitPrice": 49999.00
+}
+
+### ------------------------------------------------------------
+### 8. Negative test: insufficient stock
+### Expected: insufficient stock error
+### ------------------------------------------------------------
+
+POST {{gateway}}/api/orders
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "productId": 101,
+  "quantity": 100,
+  "unitPrice": 49999.00
+}

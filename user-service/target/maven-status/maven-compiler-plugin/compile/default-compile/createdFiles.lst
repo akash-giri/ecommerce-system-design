@@ -1,0 +1,17 @@
+com\ecommerce\user\entity\User$UserBuilder.class
+com\ecommerce\user\exception\UserAlreadyExistsException.class
+com\ecommerce\user\exception\ApiErrorResponse.class
+com\ecommerce\user\dto\OrderSummaryResponse.class
+com\ecommerce\user\service\UserService.class
+com\ecommerce\user\controller\UserController.class
+com\ecommerce\user\UserServiceApplication.class
+com\ecommerce\user\dto\CreateUserRequest.class
+com\ecommerce\user\exception\GlobalExceptionHandler.class
+com\ecommerce\user\dto\UserResponse$UserResponseBuilder.class
+com\ecommerce\user\exception\ApiErrorResponse$ApiErrorResponseBuilder.class
+com\ecommerce\user\entity\User.class
+com\ecommerce\user\repository\UserRepository.class
+com\ecommerce\user\config\OpenApiConfig.class
+com\ecommerce\user\exception\UserNotFoundException.class
+com\ecommerce\user\feign\OrderServiceClient.class
+com\ecommerce\user\dto\UserResponse.class

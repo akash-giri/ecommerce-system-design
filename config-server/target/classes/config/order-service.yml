@@ -1,0 +1,4 @@
+app:
+  kafka:
+    order-created-topic: order-created
+    stock-updated-topic: stock-updated
