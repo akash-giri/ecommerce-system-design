@@ -5,10 +5,14 @@ spring:
   application:
     name: api-gateway
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}
   cloud:
     gateway:
       routes:
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**
         - id: user-service
           uri: lb://user-service
           predicates:
@@ -32,3 +36,7 @@ management:
     web:
       exposure:
         include: health,info,gateway
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:TXlTdXBlclNlY3JldEtleUZvckp3dFNpZ25pbmdNeVN1cGVyU2VjcmV0S2V5MTIzNDU2Nzg5MDE=}

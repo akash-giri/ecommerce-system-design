@@ -1,2 +1,4 @@
 com\ecommerce\gateway\ApiGatewayApplication.class
+com\ecommerce\gateway\filter\AuthTokenFilter.class
 com\ecommerce\gateway\filter\CorrelationIdFilter.class
+com\ecommerce\gateway\security\JwtTokenService.class
