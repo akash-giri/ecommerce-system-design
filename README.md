@@ -3,6 +3,7 @@
 This project is a Dockerized Spring Boot microservices demo with:
 
 - `api-gateway`
+- `auth-service`
 - `discovery-server` (Eureka)
 - `config-server`
 - `user-service`
@@ -14,6 +15,8 @@ This project is a Dockerized Spring Boot microservices demo with:
 
 The project now supports a working end-to-end flow through:
 
+- JWT login through `auth-service`
+- gateway-side token validation
 - direct service APIs
 - API gateway routes
 - Kafka async processing
@@ -48,6 +51,7 @@ Repeatable end-to-end flow through the API gateway using:
 
 - a unique product id on each run
 - a unique email on each run
+- a unique auth user on each run
 - automatic readiness checks before requests start
 
 Use this for normal testing. This is the recommended script.
@@ -117,12 +121,13 @@ The clean script:
 
 1. waits for all services to become healthy
 2. waits for gateway routing to become ready
-3. creates a unique inventory item
-4. creates a unique user
-5. places an order
-6. waits for Kafka async processing
-7. verifies the order reaches `STOCK_CONFIRMED`
-8. verifies inventory after reservation
+3. registers and logs in an auth user to get a JWT
+4. creates a unique inventory item
+5. creates a unique business user
+6. places an order
+7. waits for Kafka async processing
+8. verifies the order reaches `STOCK_CONFIRMED`
+9. verifies inventory after reservation
 
 Expected successful outcome:
 
@@ -137,6 +142,7 @@ Use these if you want to verify service health manually:
 
 ```powershell
 Invoke-RestMethod http://localhost:8080/actuator/health
+Invoke-RestMethod http://localhost:8084/actuator/health
 Invoke-RestMethod http://localhost:8081/actuator/health
 Invoke-RestMethod http://localhost:8082/actuator/health
 Invoke-RestMethod http://localhost:8083/actuator/health
@@ -152,13 +158,23 @@ All should return:
 
 ## Manual Gateway Checks
 
-Examples:
+First register and log in:
 
 ```powershell
-Invoke-RestMethod http://localhost:8080/api/users/1
-Invoke-RestMethod http://localhost:8080/api/orders/1
-Invoke-RestMethod http://localhost:8080/api/inventory/101
+$register = Invoke-RestMethod -Method Post -Uri "http://localhost:8080/auth/register" -ContentType "application/json" -Body '{"username":"demo-user","email":"demo-user@example.com","password":"Password@123"}'
+$login = Invoke-RestMethod -Method Post -Uri "http://localhost:8080/auth/login" -ContentType "application/json" -Body '{"username":"demo-user","password":"Password@123"}'
+$headers = @{ Authorization = "Bearer $($login.accessToken)" }
 ```
+
+Then call protected routes:
+
+```powershell
+Invoke-RestMethod http://localhost:8080/api/users/1 -Headers $headers
+Invoke-RestMethod http://localhost:8080/api/orders/1 -Headers $headers
+Invoke-RestMethod http://localhost:8080/api/inventory/101 -Headers $headers
+```
+
+Note: direct service ports such as `8081`, `8082`, and `8083` are still open for local development and debugging. Gateway auth is the enforced path in this sprint.
 
 ## Database Verification
 
@@ -229,6 +245,18 @@ Use:
 ```
 
 It already waits for routing readiness before sending requests.
+
+### Protected route returns `401 Unauthorized`
+
+This means the gateway is running, but the request did not include a valid bearer token.
+
+Use:
+
+```powershell
+.\test-flow-clean.ps1
+```
+
+or log in manually through `/auth/login` and send the returned JWT in the `Authorization` header.
 
 ### Order stays in `CREATED`
 

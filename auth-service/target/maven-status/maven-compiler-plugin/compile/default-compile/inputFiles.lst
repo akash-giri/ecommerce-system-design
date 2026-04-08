@@ -1,0 +1,14 @@
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\exception\InvalidCredentialsException.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\entity\AuthUser.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\AuthServiceApplication.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\repository\AuthUserRepository.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\exception\AuthUserAlreadyExistsException.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\exception\GlobalExceptionHandler.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\dto\LoginRequest.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\dto\RegisterRequest.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\service\JwtService.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\dto\AuthResponse.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\config\OpenApiConfig.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\service\AuthService.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\exception\ApiErrorResponse.java
+C:\Users\Admin\OneDrive\Documents\New project\auth-service\src\main\java\com\ecommerce\auth\controller\AuthController.java

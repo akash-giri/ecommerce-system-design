@@ -2,6 +2,7 @@ FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /workspace
 COPY pom.xml .
 COPY api-gateway/pom.xml api-gateway/pom.xml
+COPY auth-service/pom.xml auth-service/pom.xml
 COPY config-server/pom.xml config-server/pom.xml
 COPY discovery-server/pom.xml discovery-server/pom.xml
 COPY inventory-service/pom.xml inventory-service/pom.xml

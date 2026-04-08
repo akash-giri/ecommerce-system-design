@@ -2,6 +2,8 @@ $baseUrl = "http://localhost:8080"
 $runId = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
 $productId = 1000 + ($runId % 1000000)
 $email = "rahul+$runId@example.com"
+$authUsername = "rahul-auth-$runId"
+$authEmail = "rahul-auth+$runId@example.com"
 
 function Step($message) {
     Write-Host ""
@@ -115,7 +117,7 @@ function Wait-ForGatewayRouting {
             return
         } catch {
             $statusCode = Get-HttpStatusCode $_
-            if ($statusCode -eq 404) {
+            if ($statusCode -in 401, 404) {
                 Write-Host "Gateway routing is ready." -ForegroundColor Green
                 return
             }
@@ -129,38 +131,53 @@ function Wait-ForGatewayRouting {
 
 Step "0. Wait for services to be ready"
 Wait-ForHealthyEndpoint -Name "API gateway" -Uri "$baseUrl/actuator/health"
+Wait-ForHealthyEndpoint -Name "Auth service" -Uri "http://localhost:8084/actuator/health"
 Wait-ForHealthyEndpoint -Name "User service" -Uri "http://localhost:8081/actuator/health"
 Wait-ForHealthyEndpoint -Name "Order service" -Uri "http://localhost:8082/actuator/health"
 Wait-ForHealthyEndpoint -Name "Inventory service" -Uri "http://localhost:8083/actuator/health"
 Wait-ForGatewayRouting
 
-Step "1. Run metadata"
+Step "1. Register and login auth user"
+$registerBody = @{
+    username = $authUsername
+    email = $authEmail
+    password = "Password@123"
+} | ConvertTo-Json
+Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/auth/register" -ContentType "application/json" -Body $registerBody }
+$loginBody = @{
+    username = $authUsername
+    password = "Password@123"
+} | ConvertTo-Json
+$auth = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/auth/login" -ContentType "application/json" -Body $loginBody }
+$authHeaders = if ($null -ne $auth) { @{ Authorization = "Bearer $($auth.accessToken)" } } else { $null }
+
+Step "2. Run metadata"
 Write-Host "runId: $runId"
 Write-Host "productId: $productId"
 Write-Host "email: $email"
 
-Step "2. Create inventory"
+Step "3. Create inventory"
 $inventoryBody = @{
     productId = $productId
     productName = "iPhone 15 Run $runId"
     availableQuantity = 10
 } | ConvertTo-Json
-$inventory = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/inventory" -ContentType "application/json" -Body $inventoryBody }
+$inventory = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/inventory" -Headers $authHeaders -ContentType "application/json" -Body $inventoryBody }
 
-Step "3. Check inventory before order"
-$inventoryBefore = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId" }
-$availabilityBefore = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId/availability" }
+Step "4. Check inventory before order"
+$inventoryBefore = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId" -Headers $authHeaders }
+$availabilityBefore = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId/availability" -Headers $authHeaders }
 
-Step "4. Create user"
+Step "5. Create user"
 $userBody = @{
     name = "Rahul"
     email = $email
     address = "Bangalore"
 } | ConvertTo-Json
-$user = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/users" -ContentType "application/json" -Body $userBody }
+$user = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/users" -Headers $authHeaders -ContentType "application/json" -Body $userBody }
 $userId = if ($null -ne $user) { $user.id } else { $null }
 
-Step "5. Place order"
+Step "6. Place order"
 $orderBody = @{
     userId = $userId
     productId = $productId
@@ -168,29 +185,29 @@ $orderBody = @{
     unitPrice = 49999.00
 } | ConvertTo-Json
 if ($null -ne $userId) {
-    $order = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/orders" -ContentType "application/json" -Body $orderBody }
+    $order = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/orders" -Headers $authHeaders -ContentType "application/json" -Body $orderBody }
     $orderId = if ($null -ne $order) { $order.orderId } else { $null }
 } else {
     Write-Host "Skipping order creation because user id is unavailable." -ForegroundColor Yellow
     $orderId = $null
 }
 
-Step "6. Wait for Kafka processing"
+Step "7. Wait for Kafka processing"
 Start-Sleep -Seconds 5
 
-Step "7. Check order after async processing"
+Step "8. Check order after async processing"
 if ($null -ne $orderId) {
-    $finalOrder = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/orders/$orderId" }
+    $finalOrder = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/orders/$orderId" -Headers $authHeaders }
 } else {
     Write-Host "Skipping order fetch because order id is unavailable." -ForegroundColor Yellow
     $finalOrder = $null
 }
 
-Step "8. Check inventory after order"
-$inventoryAfter = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId" }
-$availabilityAfter = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId/availability" }
+Step "9. Check inventory after order"
+$inventoryAfter = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId" -Headers $authHeaders }
+$availabilityAfter = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId/availability" -Headers $authHeaders }
 
-Step "9. Summary"
+Step "10. Summary"
 Write-Host "UserId: $userId"
 Write-Host "OrderId: $orderId"
 Write-Host "ProductId: $productId"
