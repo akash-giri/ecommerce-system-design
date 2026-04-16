@@ -237,23 +237,68 @@ Start the stack and observability:
 docker compose up -d
 ```
 
+### 1) Verify Prometheus Is Scraping Metrics
+
+Prometheus works by "scraping" (polling) each service's `/actuator/prometheus` endpoint on a fixed interval.
+
 Verify Prometheus targets are up:
 
 ```powershell
 Invoke-RestMethod http://localhost:9090/api/v1/targets
 ```
 
-Then open Grafana and explore metrics like:
+You should see all jobs in `health=up`:
+
+- `api-gateway`
+- `auth-service`
+- `user-service`
+- `order-service`
+- `inventory-service`
+
+### 2) Explore Metrics in Prometheus
+
+Open Prometheus UI:
+
+- `http://localhost:9090`
+
+Try queries like:
 
 - `http_server_requests_seconds_count`
+- `rate(http_server_requests_seconds_count[1m])`
 - `jvm_memory_used_bytes`
 - `resilience4j_circuitbreaker_state`
 
-### Golden Signals Dashboard
+### 3) View Metrics in Grafana
 
-Grafana auto-loads a dashboard from:
+Grafana is a dashboard tool. It queries Prometheus and renders charts.
 
-- [golden-signals.json](C:/Users/Admin/OneDrive/Documents/New%20project/observability/grafana/dashboards/golden-signals.json)
+Open Grafana:
+
+- `http://localhost:3000` (login `admin` / `admin`)
+
+Grafana is pre-provisioned with:
+
+- a Prometheus datasource (uid `prometheus`)
+- a dashboard folder: `Spring Boot`
+
+#### Golden Signals Dashboard
+
+Open:
+
+- `Dashboards` -> `Spring Boot` -> `Golden Signals (Spring Boot Microservices)`
+
+This dashboard shows the "golden signals":
+
+- traffic (RPS)
+- errors (5xx rate)
+- latency (p95)
+- saturation (JVM heap used)
+
+These charts update as soon as you run traffic (for example `.\test-flow-clean.ps1`).
+
+Dashboard source file:
+
+- [golden-signals.json](/C:/Users/Admin/OneDrive/Documents/New%20project/observability/grafana/dashboards/golden-signals.json)
 
 ## Distributed Tracing (Jaeger)
 
@@ -275,12 +320,14 @@ Then open Jaeger UI and search for services like `api-gateway`, `order-service`,
 
 ### Trace-to-Log Correlation
 
-Service logs now include `traceId` and `spanId` (Micrometer tracing MDC) so you can copy a trace id from Jaeger and search in:
+Most HTTP request logs include `traceId` and `spanId` (Micrometer tracing MDC) so you can copy a trace id from Jaeger and search in:
 
 ```powershell
 docker compose logs api-gateway --tail 200
 docker compose logs order-service --tail 200
 ```
+
+Note: the gateway also logs an `X-Correlation-Id` per request (see `CorrelationIdFilter`). This is often the easiest ID to follow in gateway logs.
 
 ## Database Verification
 
@@ -342,7 +389,10 @@ Use `down -v` only when you want to clear MySQL and Mongo data and start fresh.
 
 ### Script returns `503 Server Unavailable`
 
-Usually happens when the gateway is up but routing is not fully ready yet.
+Usually happens during cold start (first requests after containers start) because:
+
+- gateway timeouts are intentionally short (fail-fast)
+- the first order request may take longer due to warm-up (JIT, DB pool, Kafka producer init)
 
 Use:
 
@@ -350,7 +400,7 @@ Use:
 .\test-flow-clean.ps1
 ```
 
-It already waits for routing readiness before sending requests.
+It waits for routing readiness before sending requests and retries order creation on transient `502/503/504`.
 
 ### Protected route returns `401 Unauthorized`
 

@@ -78,6 +78,43 @@ function Invoke-StepRequest {
     }
 }
 
+function Invoke-StepRequestWithRetry {
+    param(
+        [scriptblock]$Request,
+        [int]$MaxAttempts = 5,
+        [int[]]$RetryStatusCodes = @(502, 503, 504),
+        [int]$InitialDelaySeconds = 1
+    )
+
+    $delaySeconds = [Math]::Max(0, $InitialDelaySeconds)
+    for ($attempt = 1; $attempt -le $MaxAttempts; $attempt++) {
+        try {
+            $result = & $Request
+            if ($null -ne $result) {
+                Show-Json $result
+            }
+            return $result
+        } catch {
+            $statusCode = Get-HttpStatusCode $_
+            Show-ErrorResponse $_
+
+            if ($attempt -lt $MaxAttempts -and $null -ne $statusCode -and ($RetryStatusCodes -contains $statusCode)) {
+                Write-Host "Transient error ($statusCode). Retrying attempt $($attempt + 1)/$MaxAttempts in $delaySeconds second(s)..." -ForegroundColor Yellow
+                if ($delaySeconds -gt 0) {
+                    Start-Sleep -Seconds $delaySeconds
+                }
+                # Simple backoff: 1s, 2s, 4s, 8s...
+                $delaySeconds = [Math]::Min(10, [Math]::Max(1, $delaySeconds * 2))
+                continue
+            }
+
+            return $null
+        }
+    }
+
+    return $null
+}
+
 function Wait-ForHealthyEndpoint {
     param(
         [string]$Name,
@@ -250,7 +287,11 @@ $orderBody = @{
     unitPrice = 49999.00
 } | ConvertTo-Json
 if ($null -ne $userId) {
-    $order = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/orders" -Headers $authHeaders -ContentType "application/json" -Body $orderBody }
+    # On cold start, the gateway may briefly return 503 (timeout/circuit-breaker) even though the backend is coming up.
+    # Retrying makes this flow deterministic for demos.
+    $order = Invoke-StepRequestWithRetry -MaxAttempts 5 -InitialDelaySeconds 1 -Request {
+        Invoke-RestMethod -Method Post -Uri "$baseUrl/api/orders" -Headers $authHeaders -ContentType "application/json" -Body $orderBody
+    }
     $orderId = if ($null -ne $order) { $order.orderId } else { $null }
 } else {
     Write-Host "Skipping order creation because user id is unavailable." -ForegroundColor Yellow
