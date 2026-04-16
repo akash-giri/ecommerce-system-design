@@ -1,6 +1,6 @@
 $baseUrl = "http://localhost:8080"
 $runId = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
-$authUsername = "rahul-auth-$runId"
+$authUsername = "admin-rahul-auth-$runId"
 $authEmail = "rahul-auth+$runId@example.com"
 
 function Step($message) {
@@ -127,6 +127,33 @@ function Wait-ForGatewayRouting {
     throw "Gateway routing did not become ready within $TimeoutSeconds seconds."
 }
 
+function Wait-ForGatewayBackendReady {
+    param(
+        [string]$Uri,
+        [hashtable]$Headers,
+        [int]$TimeoutSeconds = 180
+    )
+
+    $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+    while ((Get-Date) -lt $deadline) {
+        try {
+            Invoke-RestMethod -Method Get -Uri $Uri -Headers $Headers | Out-Null
+            Write-Host "Gateway backend routing is ready." -ForegroundColor Green
+            return
+        } catch {
+            $statusCode = Get-HttpStatusCode $_
+            if ($statusCode -eq 404) {
+                Write-Host "Gateway backend routing is ready." -ForegroundColor Green
+                return
+            }
+        }
+
+        Start-Sleep -Seconds 2
+    }
+
+    throw "Gateway backend routing did not become ready within $TimeoutSeconds seconds."
+}
+
 Step "0. Wait for services to be ready"
 Wait-ForHealthyEndpoint -Name "API gateway" -Uri "$baseUrl/actuator/health"
 Wait-ForHealthyEndpoint -Name "Auth service" -Uri "http://localhost:8084/actuator/health"
@@ -148,6 +175,9 @@ $loginBody = @{
 } | ConvertTo-Json
 $auth = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/auth/login" -ContentType "application/json" -Body $loginBody }
 $authHeaders = if ($null -ne $auth) { @{ Authorization = "Bearer $($auth.accessToken)" } } else { $null }
+if ($null -ne $authHeaders) {
+    Wait-ForGatewayBackendReady -Uri "$baseUrl/api/inventory/101/availability" -Headers $authHeaders
+}
 
 Step "2. Health checks"
 Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/actuator/health" }

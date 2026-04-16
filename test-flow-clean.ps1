@@ -2,7 +2,7 @@ $baseUrl = "http://localhost:8080"
 $runId = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
 $productId = 1000 + ($runId % 1000000)
 $email = "rahul+$runId@example.com"
-$authUsername = "rahul-auth-$runId"
+$authUsername = "admin-rahul-auth-$runId"
 $authEmail = "rahul-auth+$runId@example.com"
 
 function Step($message) {
@@ -129,6 +129,33 @@ function Wait-ForGatewayRouting {
     throw "Gateway routing did not become ready within $TimeoutSeconds seconds."
 }
 
+function Wait-ForGatewayBackendReady {
+    param(
+        [string]$Uri,
+        [hashtable]$Headers,
+        [int]$TimeoutSeconds = 180
+    )
+
+    $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+    while ((Get-Date) -lt $deadline) {
+        try {
+            Invoke-RestMethod -Method Get -Uri $Uri -Headers $Headers | Out-Null
+            Write-Host "Gateway backend routing is ready." -ForegroundColor Green
+            return
+        } catch {
+            $statusCode = Get-HttpStatusCode $_
+            if ($statusCode -eq 404) {
+                Write-Host "Gateway backend routing is ready." -ForegroundColor Green
+                return
+            }
+        }
+
+        Start-Sleep -Seconds 2
+    }
+
+    throw "Gateway backend routing did not become ready within $TimeoutSeconds seconds."
+}
+
 Step "0. Wait for services to be ready"
 Wait-ForHealthyEndpoint -Name "API gateway" -Uri "$baseUrl/actuator/health"
 Wait-ForHealthyEndpoint -Name "Auth service" -Uri "http://localhost:8084/actuator/health"
@@ -150,6 +177,44 @@ $loginBody = @{
 } | ConvertTo-Json
 $auth = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/auth/login" -ContentType "application/json" -Body $loginBody }
 $authHeaders = if ($null -ne $auth) { @{ Authorization = "Bearer $($auth.accessToken)" } } else { $null }
+if ($null -ne $authHeaders) {
+    Wait-ForGatewayBackendReady -Uri "$baseUrl/api/inventory/$productId/availability" -Headers $authHeaders
+}
+
+Step "1b. RBAC check (USER should be forbidden for inventory write)"
+$userUsername = "user-rahul-auth-$runId"
+$userEmail = "rahul-user-auth+$runId@example.com"
+$userRegisterBody = @{
+    username = $userUsername
+    email = $userEmail
+    password = "Password@123"
+} | ConvertTo-Json
+Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/auth/register" -ContentType "application/json" -Body $userRegisterBody }
+$userLoginBody = @{
+    username = $userUsername
+    password = "Password@123"
+} | ConvertTo-Json
+$userAuth = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/auth/login" -ContentType "application/json" -Body $userLoginBody }
+$userHeaders = if ($null -ne $userAuth) { @{ Authorization = "Bearer $($userAuth.accessToken)" } } else { $null }
+if ($null -ne $userHeaders) {
+    $userInventoryBody = @{
+        productId = $productId + 1
+        productName = "RBAC should fail Run $runId"
+        availableQuantity = 1
+    } | ConvertTo-Json
+    try {
+        Invoke-RestMethod -Method Post -Uri "$baseUrl/api/inventory" -Headers $userHeaders -ContentType "application/json" -Body $userInventoryBody | Out-Null
+        Write-Host "Unexpected: USER was allowed to write inventory." -ForegroundColor Yellow
+    } catch {
+        $statusCode = Get-HttpStatusCode $_
+        if ($statusCode -eq 403) {
+            Write-Host "RBAC OK: USER received 403 Forbidden for inventory write." -ForegroundColor Green
+        } else {
+            Write-Host "RBAC check returned unexpected status: $statusCode" -ForegroundColor Yellow
+            Show-ErrorResponse $_
+        }
+    }
+}
 
 Step "2. Run metadata"
 Write-Host "runId: $runId"
@@ -216,6 +281,26 @@ if ($null -ne $finalOrder) {
 }
 if ($null -ne $inventoryAfter) {
     Write-Host "Inventory reserved quantity: $($inventoryAfter.reservedQuantity)" -ForegroundColor Green
+}
+
+Step "11. Rate limiting smoke test (try to trigger 429)"
+$hitUri = "$baseUrl/api/inventory/$productId/availability"
+$hit429 = $false
+for ($i = 0; $i -lt 60; $i++) {
+    try {
+        Invoke-RestMethod -Method Get -Uri $hitUri -Headers $authHeaders | Out-Null
+    } catch {
+        $statusCode = Get-HttpStatusCode $_
+        if ($statusCode -eq 429) {
+            $hit429 = $true
+            break
+        }
+    }
+}
+if ($hit429) {
+    Write-Host "Rate limiting OK: received 429 Too Many Requests." -ForegroundColor Green
+} else {
+    Write-Host "Rate limiting note: did not hit 429 in this run (limits may be high or requests were slow)." -ForegroundColor Yellow
 }
 
 Write-Host ""

@@ -161,8 +161,8 @@ All should return:
 First register and log in:
 
 ```powershell
-$register = Invoke-RestMethod -Method Post -Uri "http://localhost:8080/auth/register" -ContentType "application/json" -Body '{"username":"demo-user","email":"demo-user@example.com","password":"Password@123"}'
-$login = Invoke-RestMethod -Method Post -Uri "http://localhost:8080/auth/login" -ContentType "application/json" -Body '{"username":"demo-user","password":"Password@123"}'
+$register = Invoke-RestMethod -Method Post -Uri "http://localhost:8080/auth/register" -ContentType "application/json" -Body '{"username":"admin-demo-user","email":"demo-user@example.com","password":"Password@123"}'
+$login = Invoke-RestMethod -Method Post -Uri "http://localhost:8080/auth/login" -ContentType "application/json" -Body '{"username":"admin-demo-user","password":"Password@123"}'
 $headers = @{ Authorization = "Bearer $($login.accessToken)" }
 ```
 
@@ -175,6 +175,28 @@ Invoke-RestMethod http://localhost:8080/api/inventory/101 -Headers $headers
 ```
 
 Note: direct service ports such as `8081`, `8082`, and `8083` are still open for local development and debugging. Gateway auth is the enforced path in this sprint.
+
+## Gateway Rate Limiting
+
+The gateway enforces Redis-backed rate limiting on `/api/**` routes. If you exceed the limit, you will see `429 Too Many Requests`.
+
+## Forwarded Identity Headers (Gateway -> Services)
+
+For this security sprint, the API gateway is the authentication boundary:
+
+- you authenticate via `auth-service` (`/auth/register`, `/auth/login`)
+- the gateway validates the JWT on every `/api/**` call
+- the gateway forwards identity to services using headers:
+  - `X-Authenticated-User`
+  - `X-Authenticated-UserId`
+  - `X-Authenticated-Role`
+- the gateway also adds `X-Gateway-Secret` (a shared dev-only secret) so services can reject spoofed headers
+
+Services now enforce these forwarded headers for all `/api/**` endpoints (actuator + swagger are excluded).
+
+RBAC demo rule: only `ADMIN` role can `POST /api/inventory` (inventory upsert).
+
+If you call a service directly on ports `8081/8082/8083` for debugging, it will return `401` unless you include the forwarded headers and `X-Gateway-Secret`. For normal testing, always call via the gateway (`8080`) and use `test-flow-clean.ps1`.
 
 ## Database Verification
 

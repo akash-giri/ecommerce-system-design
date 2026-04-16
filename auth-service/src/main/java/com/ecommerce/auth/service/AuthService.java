@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class AuthService {
 
     private static final String DEFAULT_ROLE = "USER";
+    private static final String ADMIN_ROLE = "ADMIN";
 
     private final AuthUserRepository authUserRepository;
     private final JwtService jwtService;
@@ -35,7 +36,7 @@ public class AuthService {
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .passwordHash(passwordEncoder.encode(request.getPassword()))
-                .role(DEFAULT_ROLE)
+                .role(determineRole(request.getUsername()))
                 .build());
 
         return buildAuthResponse(authUser);
@@ -61,5 +62,13 @@ public class AuthService {
                 .accessToken(jwtService.generateToken(authUser))
                 .expiresInSeconds(jwtService.getExpirationSeconds())
                 .build();
+    }
+
+    private String determineRole(String username) {
+        // Dev-only convention to make it easy to test RBAC without a full admin provisioning flow.
+        if (username != null && username.toLowerCase().startsWith("admin-")) {
+            return ADMIN_ROLE;
+        }
+        return DEFAULT_ROLE;
     }
 }

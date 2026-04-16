@@ -45,3 +45,7 @@ management:
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+
+gateway:
+  forwarded-auth:
+    secret: ${GATEWAY_SECRET:dev-gateway-secret}

@@ -6,6 +6,10 @@ spring:
     name: api-gateway
   config:
     import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
   cloud:
     gateway:
       routes:
@@ -17,14 +21,32 @@ spring:
           uri: lb://user-service
           predicates:
             - Path=/api/users/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                key-resolver: "#{@userKeyResolver}"
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/api/orders/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                key-resolver: "#{@userKeyResolver}"
         - id: inventory-service
           uri: lb://inventory-service
           predicates:
             - Path=/api/inventory/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                key-resolver: "#{@userKeyResolver}"
 
 eureka:
   client:
@@ -40,3 +62,7 @@ management:
 security:
   jwt:
     secret: ${JWT_SECRET:TXlTdXBlclNlY3JldEtleUZvckp3dFNpZ25pbmdNeVN1cGVyU2VjcmV0S2V5MTIzNDU2Nzg5MDE=}
+
+gateway:
+  forwarded-auth:
+    secret: ${GATEWAY_SECRET:dev-gateway-secret}

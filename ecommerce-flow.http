@@ -1,6 +1,6 @@
 ### Base URL
 @gateway = http://localhost:8080
-@username = demo-user
+@username = admin-demo-user
 @password = Password@123
 @email = demo-user@example.com
 @token =

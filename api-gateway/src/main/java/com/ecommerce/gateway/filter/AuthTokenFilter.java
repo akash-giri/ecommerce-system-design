@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -30,7 +31,15 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
             "/actuator/"
     );
 
+    private static final String HEADER_AUTH_USER = "X-Authenticated-User";
+    private static final String HEADER_AUTH_USER_ID = "X-Authenticated-UserId";
+    private static final String HEADER_AUTH_ROLE = "X-Authenticated-Role";
+    private static final String HEADER_GATEWAY_SECRET = "X-Gateway-Secret";
+
     private final JwtTokenService jwtTokenService;
+
+    @Value("${gateway.forwarded-auth.secret:dev-gateway-secret}")
+    private String gatewaySecret;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -47,11 +56,23 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
         String token = header.substring(7);
         try {
             Claims claims = jwtTokenService.parseToken(token);
-            ServerHttpRequest request = exchange.getRequest()
-                    .mutate()
-                    .header("X-Authenticated-User", claims.getSubject())
-                    .header("X-Authenticated-UserId", String.valueOf(claims.get("userId")))
-                    .header("X-Authenticated-Role", String.valueOf(claims.get("role")))
+            if (!isAuthorized(exchange.getRequest().getMethod(), path, String.valueOf(claims.get("role")))) {
+                return forbidden(exchange, "Forbidden for role");
+            }
+
+            // Prevent clients from spoofing identity headers; only the gateway should set these.
+            ServerHttpRequest request = exchange.getRequest().mutate()
+                    .headers(headers -> {
+                        headers.remove(HEADER_AUTH_USER);
+                        headers.remove(HEADER_AUTH_USER_ID);
+                        headers.remove(HEADER_AUTH_ROLE);
+                        headers.remove(HEADER_GATEWAY_SECRET);
+
+                        headers.add(HEADER_AUTH_USER, claims.getSubject());
+                        headers.add(HEADER_AUTH_USER_ID, String.valueOf(claims.get("userId")));
+                        headers.add(HEADER_AUTH_ROLE, String.valueOf(claims.get("role")));
+                        headers.add(HEADER_GATEWAY_SECRET, gatewaySecret);
+                    })
                     .build();
             return chain.filter(exchange.mutate().request(request).build());
         } catch (JwtException | IllegalArgumentException ex) {
@@ -67,10 +88,27 @@ public class AuthTokenFilter implements GlobalFilter, Ordered {
         return PUBLIC_PREFIXES.stream().anyMatch(path::startsWith);
     }
 
+    private boolean isAuthorized(HttpMethod method, String path, String role) {
+        // Demo RBAC rule: only ADMIN can modify inventory.
+        if (path.startsWith("/api/inventory") && HttpMethod.POST.equals(method)) {
+            return "ADMIN".equalsIgnoreCase(role);
+        }
+        return true;
+    }
+
     private Mono<Void> unauthorized(ServerWebExchange exchange, String message) {
         exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
         exchange.getResponse().getHeaders().setContentType(MediaType.APPLICATION_JSON);
         String json = "{\"status\":401,\"error\":\"Unauthorized\",\"message\":\"" + message + "\"}";
+        DataBuffer buffer = exchange.getResponse().bufferFactory()
+                .wrap(json.getBytes(StandardCharsets.UTF_8));
+        return exchange.getResponse().writeWith(Mono.just(buffer));
+    }
+
+    private Mono<Void> forbidden(ServerWebExchange exchange, String message) {
+        exchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN);
+        exchange.getResponse().getHeaders().setContentType(MediaType.APPLICATION_JSON);
+        String json = "{\"status\":403,\"error\":\"Forbidden\",\"message\":\"" + message + "\"}";
         DataBuffer buffer = exchange.getResponse().bufferFactory()
                 .wrap(json.getBytes(StandardCharsets.UTF_8));
         return exchange.getResponse().writeWith(Mono.just(buffer));

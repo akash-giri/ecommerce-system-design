@@ -26,6 +26,12 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
+  redis:
+    image: redis:7.2
+    container_name: redis
+    ports:
+      - "6379:6379"
+
   mysql-user:
     image: mysql:8.0
     container_name: mysql-user
@@ -97,10 +103,14 @@ services:
     depends_on:
       - discovery-server
       - config-server
+      - redis
     environment:
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       CONFIG_SERVER_URL: http://config-server:8888
       JWT_SECRET: TXlTdXBlclNlY3JldEtleUZvckp3dFNpZ25pbmdNeVN1cGVyU2VjcmV0S2V5MTIzNDU2Nzg5MDE=
+      GATEWAY_SECRET: dev-gateway-secret
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
 
   auth-service:
     build:
@@ -124,6 +134,7 @@ services:
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       CONFIG_SERVER_URL: http://config-server:8888
       JWT_SECRET: TXlTdXBlclNlY3JldEtleUZvckp3dFNpZ25pbmdNeVN1cGVyU2VjcmV0S2V5MTIzNDU2Nzg5MDE=
+      GATEWAY_SECRET: dev-gateway-secret
 
   user-service:
     build:
@@ -143,6 +154,7 @@ services:
       USER_DB_PASSWORD: root
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       CONFIG_SERVER_URL: http://config-server:8888
+      GATEWAY_SECRET: dev-gateway-secret
 
   order-service:
     build:
@@ -164,6 +176,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       CONFIG_SERVER_URL: http://config-server:8888
+      GATEWAY_SECRET: dev-gateway-secret
 
   inventory-service:
     build:
@@ -183,3 +196,4 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       CONFIG_SERVER_URL: http://config-server:8888
+      GATEWAY_SECRET: dev-gateway-secret
