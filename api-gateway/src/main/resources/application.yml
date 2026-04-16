@@ -12,11 +12,16 @@ spring:
       port: ${REDIS_PORT:6379}
   cloud:
     gateway:
+      httpclient:
+        # Fail fast when a backend is slow/down to prevent thread/connection exhaustion.
+        connect-timeout: 2000
+        response-timeout: 5s
       routes:
         - id: auth-service
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
+
         - id: user-service
           uri: lb://user-service
           predicates:
@@ -24,9 +29,15 @@ spring:
           filters:
             - name: RequestRateLimiter
               args:
-                redis-rate-limiter.replenishRate: 10
-                redis-rate-limiter.burstCapacity: 20
+                redis-rate-limiter.replenishRate: 20
+                redis-rate-limiter.burstCapacity: 40
                 key-resolver: "#{@userKeyResolver}"
+                status-code: TOO_MANY_REQUESTS
+            - name: CircuitBreaker
+              args:
+                name: userServiceCb
+                fallbackUri: forward:/fallback/user-service
+
         - id: order-service
           uri: lb://order-service
           predicates:
@@ -37,16 +48,47 @@ spring:
                 redis-rate-limiter.replenishRate: 10
                 redis-rate-limiter.burstCapacity: 20
                 key-resolver: "#{@userKeyResolver}"
+                status-code: TOO_MANY_REQUESTS
+            - name: CircuitBreaker
+              args:
+                name: orderServiceCb
+                fallbackUri: forward:/fallback/order-service
+
         - id: inventory-service
           uri: lb://inventory-service
           predicates:
-            - Path=/api/inventory/**
+            - Path=/api/inventory
+            - Method=POST
           filters:
             - name: RequestRateLimiter
               args:
-                redis-rate-limiter.replenishRate: 10
-                redis-rate-limiter.burstCapacity: 20
+                # Writes are more expensive; keep this lower to prevent abuse.
+                redis-rate-limiter.replenishRate: 5
+                redis-rate-limiter.burstCapacity: 10
+                redis-rate-limiter.requestedTokens: 1
                 key-resolver: "#{@userKeyResolver}"
+                status-code: TOO_MANY_REQUESTS
+            - name: CircuitBreaker
+              args:
+                name: inventoryWriteCb
+                fallbackUri: forward:/fallback/inventory-service
+
+        - id: inventory-service-read
+          uri: lb://inventory-service
+          predicates:
+            - Path=/api/inventory/**
+            - Method=GET
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 15
+                redis-rate-limiter.burstCapacity: 30
+                key-resolver: "#{@userKeyResolver}"
+                status-code: TOO_MANY_REQUESTS
+            - name: CircuitBreaker
+              args:
+                name: inventoryReadCb
+                fallbackUri: forward:/fallback/inventory-service
 
 eureka:
   client:
@@ -66,3 +108,27 @@ security:
 gateway:
   forwarded-auth:
     secret: ${GATEWAY_SECRET:dev-gateway-secret}
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      userServiceCb:
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+      orderServiceCb:
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+      inventoryWriteCb:
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+      inventoryReadCb:
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s

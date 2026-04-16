@@ -178,7 +178,13 @@ Note: direct service ports such as `8081`, `8082`, and `8083` are still open for
 
 ## Gateway Rate Limiting
 
-The gateway enforces Redis-backed rate limiting on `/api/**` routes. If you exceed the limit, you will see `429 Too Many Requests`.
+The gateway enforces Redis-backed rate limiting on `/api/**` routes using Spring Cloud Gateway's `RequestRateLimiter` + Redis.
+
+If you exceed the limit, you will see `429 Too Many Requests` and response headers such as:
+
+- `X-RateLimit-Remaining`
+- `X-RateLimit-Replenish-Rate`
+- `X-RateLimit-Burst-Capacity`
 
 ## Forwarded Identity Headers (Gateway -> Services)
 
@@ -197,6 +203,22 @@ Services now enforce these forwarded headers for all `/api/**` endpoints (actuat
 RBAC demo rule: only `ADMIN` role can `POST /api/inventory` (inventory upsert).
 
 If you call a service directly on ports `8081/8082/8083` for debugging, it will return `401` unless you include the forwarded headers and `X-Gateway-Secret`. For normal testing, always call via the gateway (`8080`) and use `test-flow-clean.ps1`.
+
+## Gateway Circuit Breaker + Fallbacks
+
+The gateway uses a circuit breaker per route to prevent cascading failures when a backend is slow or down.
+
+If a backend call fails (connection error / timeout), the gateway returns a stable JSON fallback with `503` instead of hanging.
+
+How to test quickly:
+
+```powershell
+docker compose stop inventory-service
+Invoke-RestMethod http://localhost:8080/api/inventory/101/availability -Headers @{ Authorization = "Bearer <JWT>" }
+docker compose start inventory-service
+```
+
+You should receive a `503` response from `/fallback/inventory-service`.
 
 ## Database Verification
 
