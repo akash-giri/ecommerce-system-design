@@ -62,10 +62,16 @@ resilience4j:
         wait-duration: 500ms
 
 management:
+  tracing:
+    sampling:
+      probability: 1.0
   endpoints:
     web:
       exposure:
         include: health,info,prometheus
+  otlp:
+    tracing:
+      endpoint: ${OTLP_TRACING_ENDPOINT:http://localhost:4318/v1/traces}
 
 springdoc:
   swagger-ui:
@@ -74,3 +80,7 @@ springdoc:
 gateway:
   forwarded-auth:
     secret: ${GATEWAY_SECRET:dev-gateway-secret}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},trace=%X{traceId:-},span=%X{spanId:-}]"

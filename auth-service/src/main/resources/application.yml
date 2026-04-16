@@ -24,6 +24,12 @@ eureka:
       defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
 
 management:
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: ${OTLP_TRACING_ENDPOINT:http://localhost:4318/v1/traces}
   endpoints:
     web:
       exposure:
@@ -37,3 +43,7 @@ security:
   jwt:
     secret: ${JWT_SECRET:TXlTdXBlclNlY3JldEtleUZvckp3dFNpZ25pbmdNeVN1cGVyU2VjcmV0S2V5MTIzNDU2Nzg5MDE=}
     expiration-seconds: ${JWT_EXPIRATION_SECONDS:3600}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},trace=%X{traceId:-},span=%X{spanId:-}]"

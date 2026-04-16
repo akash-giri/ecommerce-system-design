@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: "Spring Boot"
+    folder: "Spring Boot"
+    type: file
+    disableDeletion: true
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards
+

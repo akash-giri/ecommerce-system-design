@@ -220,6 +220,68 @@ docker compose start inventory-service
 
 You should receive a `503` response from `/fallback/inventory-service`.
 
+## Observability (Prometheus + Grafana)
+
+This repo exposes Prometheus metrics on each service at:
+
+`/actuator/prometheus`
+
+Docker Compose includes:
+
+- Prometheus on `http://localhost:9090`
+- Grafana on `http://localhost:3000` (login `admin` / `admin`)
+
+Start the stack and observability:
+
+```powershell
+docker compose up -d
+```
+
+Verify Prometheus targets are up:
+
+```powershell
+Invoke-RestMethod http://localhost:9090/api/v1/targets
+```
+
+Then open Grafana and explore metrics like:
+
+- `http_server_requests_seconds_count`
+- `jvm_memory_used_bytes`
+- `resilience4j_circuitbreaker_state`
+
+### Golden Signals Dashboard
+
+Grafana auto-loads a dashboard from:
+
+- [golden-signals.json](C:/Users/Admin/OneDrive/Documents/New%20project/observability/grafana/dashboards/golden-signals.json)
+
+## Distributed Tracing (Jaeger)
+
+Docker Compose includes Jaeger on:
+
+- UI: `http://localhost:16686`
+
+Traces are exported via OTLP HTTP to:
+
+- `http://jaeger:4318/v1/traces` (inside Docker network)
+
+Run an end-to-end request flow:
+
+```powershell
+.\test-flow-clean.ps1
+```
+
+Then open Jaeger UI and search for services like `api-gateway`, `order-service`, `inventory-service`.
+
+### Trace-to-Log Correlation
+
+Service logs now include `traceId` and `spanId` (Micrometer tracing MDC) so you can copy a trace id from Jaeger and search in:
+
+```powershell
+docker compose logs api-gateway --tail 200
+docker compose logs order-service --tail 200
+```
+
 ## Database Verification
 
 ### User DB

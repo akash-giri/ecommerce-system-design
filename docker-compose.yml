@@ -32,6 +32,48 @@ services:
     ports:
       - "6379:6379"
 
+  prometheus:
+    image: prom/prometheus:v2.53.1
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - "./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
+    depends_on:
+      - api-gateway
+      - auth-service
+      - user-service
+      - order-service
+      - inventory-service
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes:
+      - "./observability/grafana/provisioning:/etc/grafana/provisioning:ro"
+      - "./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro"
+    depends_on:
+      - prometheus
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.59
+    container_name: jaeger
+    ports:
+      - "16686:16686"   # UI
+      - "4317:4317"     # OTLP gRPC
+      - "4318:4318"     # OTLP HTTP
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    command:
+      - "--collector.otlp.grpc.host-port=:4317"
+      - "--collector.otlp.http.host-port=:4318"
+
   mysql-user:
     image: mysql:8.0
     container_name: mysql-user
@@ -111,6 +153,7 @@ services:
       GATEWAY_SECRET: dev-gateway-secret
       REDIS_HOST: redis
       REDIS_PORT: 6379
+      OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
 
   auth-service:
     build:
@@ -135,6 +178,7 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       JWT_SECRET: TXlTdXBlclNlY3JldEtleUZvckp3dFNpZ25pbmdNeVN1cGVyU2VjcmV0S2V5MTIzNDU2Nzg5MDE=
       GATEWAY_SECRET: dev-gateway-secret
+      OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
 
   user-service:
     build:
@@ -155,6 +199,7 @@ services:
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       CONFIG_SERVER_URL: http://config-server:8888
       GATEWAY_SECRET: dev-gateway-secret
+      OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
 
   order-service:
     build:
@@ -177,6 +222,7 @@ services:
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       CONFIG_SERVER_URL: http://config-server:8888
       GATEWAY_SECRET: dev-gateway-secret
+      OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
 
   inventory-service:
     build:
@@ -197,3 +243,4 @@ services:
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       CONFIG_SERVER_URL: http://config-server:8888
       GATEWAY_SECRET: dev-gateway-secret
+      OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces

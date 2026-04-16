@@ -96,10 +96,16 @@ eureka:
       defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
 
 management:
+  tracing:
+    sampling:
+      probability: 1.0
+  otlp:
+    tracing:
+      endpoint: ${OTLP_TRACING_ENDPOINT:http://localhost:4318/v1/traces}
   endpoints:
     web:
       exposure:
-        include: health,info,gateway
+        include: health,info,gateway,prometheus
 
 security:
   jwt:
@@ -132,3 +138,7 @@ resilience4j:
         minimum-number-of-calls: 5
         failure-rate-threshold: 50
         wait-duration-in-open-state: 10s
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},trace=%X{traceId:-},span=%X{spanId:-}]"
