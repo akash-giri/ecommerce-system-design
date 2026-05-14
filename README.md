@@ -121,13 +121,15 @@ The clean script:
 
 1. waits for all services to become healthy
 2. waits for gateway routing to become ready
-3. registers and logs in an auth user to get a JWT
-4. creates a unique inventory item
-5. creates a unique business user
-6. places an order
-7. waits for Kafka async processing
-8. verifies the order reaches `STOCK_CONFIRMED`
-9. verifies inventory after reservation
+3. waits for the gateway-to-auth-service route to be ready in Eureka/load-balancing
+4. registers and logs in an auth user to get a JWT
+5. creates a unique inventory item
+6. creates a unique business user
+7. waits for the gateway-to-order-service route to be ready in Eureka/load-balancing
+8. places an order
+9. waits for Kafka async processing
+10. verifies the order reaches `STOCK_CONFIRMED`
+11. verifies inventory after reservation
 
 Expected successful outcome:
 
@@ -219,6 +221,18 @@ docker compose start inventory-service
 ```
 
 You should receive a `503` response from `/fallback/inventory-service`.
+
+## Idempotent Order Creation
+
+The order creation flow now supports the `Idempotency-Key` request header.
+
+Why this matters:
+
+- distributed systems often retry requests after timeouts or temporary `503` errors
+- retrying a `POST /api/orders` call without idempotency can create duplicate orders
+- with `Idempotency-Key`, the same retried request returns the existing order instead of creating another one
+
+The clean test script now sends an idempotency key for order creation automatically.
 
 ## Observability (Prometheus + Grafana)
 
@@ -329,6 +343,124 @@ docker compose logs order-service --tail 200
 
 Note: the gateway also logs an `X-Correlation-Id` per request (see `CorrelationIdFilter`). This is often the easiest ID to follow in gateway logs.
 
+## Alerting (Prometheus Rules + Alertmanager)
+
+Prometheus evaluates alert rules on a schedule. When a rule is true for a configured duration (`for:`),
+Prometheus fires an alert and sends it to Alertmanager.
+
+Docker Compose includes:
+
+- Alertmanager UI: `http://localhost:9093`
+
+Prometheus is configured to send alerts to Alertmanager, and alert rules live here:
+
+- [alerts.yml](/C:/Users/Admin/OneDrive/Documents/New%20project/observability/prometheus/rules/alerts.yml)
+
+### How to See Alerts Firing (Quick Demo)
+
+1. Start everything:
+
+```powershell
+docker compose up -d
+```
+
+2. Stop one service (this should trigger `ServiceDown` after ~30s):
+
+```powershell
+docker compose stop user-service
+```
+
+3. Open:
+
+- Prometheus alerts: `http://localhost:9090/alerts`
+- Alertmanager alerts: `http://localhost:9093/#/alerts`
+
+4. Start the service again and watch the alert resolve:
+
+```powershell
+docker compose start user-service
+```
+
+## Centralized Logging (Loki + Promtail + Grafana)
+
+This project now includes a simple but production-style log pipeline:
+
+- Spring Boot services write logs to shared files under `./logs`
+- Promtail tails those log files
+- Loki stores and indexes the log streams
+- Grafana lets you search the logs
+
+Docker Compose includes:
+
+- Loki API: `http://localhost:3100`
+- Promtail: internal scraper for the log files
+
+### How It Works
+
+Each app container gets:
+
+- `LOGGING_FILE_NAME=/logs/<service>.log`
+- a shared volume mount from host `./logs` to container `/logs`
+
+So, for example:
+
+- `api-gateway` writes to `./logs/api-gateway.log`
+- `order-service` writes to `./logs/order-service.log`
+
+Promtail watches `./logs/*.log`, extracts labels from each line, and sends them to Loki.
+
+Important labels extracted from logs:
+
+- `service`
+- `level`
+- `traceId`
+- `spanId`
+
+### How to View Logs
+
+1. Start the stack:
+
+```powershell
+docker compose up -d
+```
+
+2. Generate some traffic:
+
+```powershell
+.\test-flow-clean.ps1
+```
+
+3. Open Grafana:
+
+- `http://localhost:3000`
+
+4. Go to `Explore`
+
+5. Choose datasource `Loki`
+
+6. Try queries like:
+
+```text
+{job="spring-boot-logs"}
+{service="api-gateway"}
+{service="order-service", level="INFO"}
+{traceId!=""}
+```
+
+### Why This Matters
+
+This completes the observability triangle for the project:
+
+- Prometheus = metrics
+- Jaeger = traces
+- Loki = logs
+
+So now you can explain a real production debugging flow:
+
+1. Grafana shows a latency spike
+2. Jaeger shows which service/span was slow
+3. Loki shows the exact logs for that service or `traceId`
+
 ## Database Verification
 
 ### User DB
@@ -393,6 +525,7 @@ Usually happens during cold start (first requests after containers start) becaus
 
 - gateway timeouts are intentionally short (fail-fast)
 - the first order request may take longer due to warm-up (JIT, DB pool, Kafka producer init)
+- Eureka registration/load-balancer discovery can lag behind container health for a few seconds
 
 Use:
 
@@ -400,7 +533,8 @@ Use:
 .\test-flow-clean.ps1
 ```
 
-It waits for routing readiness before sending requests and retries order creation on transient `502/503/504`.
+It waits for routing readiness, waits for the gateway-to-auth-service route to become usable, and retries order creation on transient `502/503/504`.
+It also retries inventory and user creation on transient `502/503/504`, which makes startup demos much more reliable after container restarts.
 
 ### Protected route returns `401 Unauthorized`
 

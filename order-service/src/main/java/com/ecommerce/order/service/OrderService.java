@@ -23,8 +23,13 @@ import java.util.List;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionTemplate;
+import org.springframework.util.StringUtils;
 
 @Service
 @RequiredArgsConstructor
@@ -35,23 +40,51 @@ public class OrderService {
     private final UserServiceClient userServiceClient;
     private final InventoryServiceClient inventoryServiceClient;
     private final OrderEventProducer orderEventProducer;
+    private final PlatformTransactionManager transactionManager;
 
-    @Transactional
-    public OrderResponse placeOrder(CreateOrderRequest request) {
+    public OrderResponse placeOrder(CreateOrderRequest request, String idempotencyKey) {
+        String normalizedKey = normalizeIdempotencyKey(idempotencyKey);
+        if (normalizedKey != null) {
+            Order existing = orderRepository.findByIdempotencyKey(normalizedKey).orElse(null);
+            if (existing != null) {
+                log.info("Returning existing order {} for idempotency key {}", existing.getId(), normalizedKey);
+                return toResponse(existing);
+            }
+        }
+
         validateUserExists(request.getUserId());
         ensureProductHasStock(request.getProductId(), request.getQuantity());
 
         BigDecimal totalAmount = request.getUnitPrice().multiply(BigDecimal.valueOf(request.getQuantity()));
-        Order order = orderRepository.save(Order.builder()
-                .userId(request.getUserId())
-                .productId(request.getProductId())
-                .quantity(request.getQuantity())
-                .unitPrice(request.getUnitPrice())
-                .totalAmount(totalAmount)
-                .status(OrderStatus.CREATED)
-                .createdAt(Instant.now())
-                .updatedAt(Instant.now())
-                .build());
+        TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
+        transactionTemplate.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRES_NEW);
+
+        Order order;
+        try {
+            order = transactionTemplate.execute(status -> orderRepository.saveAndFlush(Order.builder()
+                    .userId(request.getUserId())
+                    .productId(request.getProductId())
+                    .quantity(request.getQuantity())
+                    .unitPrice(request.getUnitPrice())
+                    .totalAmount(totalAmount)
+                    .idempotencyKey(normalizedKey)
+                    .status(OrderStatus.CREATED)
+                    .createdAt(Instant.now())
+                    .updatedAt(Instant.now())
+                    .build()));
+        } catch (DataIntegrityViolationException ex) {
+            if (normalizedKey != null) {
+                Order existing = orderRepository.findByIdempotencyKey(normalizedKey).orElse(null);
+                if (existing != null) {
+                    log.info("Recovered existing order {} after duplicate idempotency key {}", existing.getId(), normalizedKey);
+                    return toResponse(existing);
+                }
+            }
+            throw ex;
+        }
+        if (order == null) {
+            throw new IllegalStateException("Order transaction completed without creating an order");
+        }
 
         orderEventProducer.publishOrderCreated(OrderCreatedEvent.builder()
                 .eventId(UUID.randomUUID().toString())
@@ -138,5 +171,12 @@ public class OrderService {
                 .totalAmount(order.getTotalAmount())
                 .status(order.getStatus().name())
                 .build();
+    }
+
+    private String normalizeIdempotencyKey(String idempotencyKey) {
+        if (!StringUtils.hasText(idempotencyKey)) {
+            return null;
+        }
+        return idempotencyKey.trim();
     }
 }

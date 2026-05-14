@@ -1,0 +1,66 @@
+{{- if .Values.deps.mongo.enabled }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  # Keep the name `mongo-inventory` to match inventory-service defaults.
+  name: mongo-inventory
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: mongo-inventory
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: mongo-inventory
+  ports:
+    - name: mongo
+      port: 27017
+      targetPort: 27017
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo-inventory
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: mongo-inventory
+spec:
+  serviceName: mongo-inventory
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: mongo-inventory
+  template:
+    metadata:
+      labels:
+        {{- include "ecommerce.labels" . | nindent 8 }}
+        app.kubernetes.io/component: mongo-inventory
+    spec:
+      containers:
+        - name: mongo
+          image: {{ .Values.deps.mongo.image | quote }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: mongo
+              containerPort: 27017
+          args: ["--bind_ip_all"]
+          volumeMounts:
+            - name: data
+              mountPath: /data/db
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+        labels:
+          {{- include "ecommerce.labels" $ | nindent 10 }}
+          app.kubernetes.io/component: mongo-inventory
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: {{ .Values.deps.mongo.storageSize | quote }}
+{{- end }}
+

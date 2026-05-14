@@ -1,0 +1,6 @@
+apiVersion: v2
+name: ecommerce
+description: E-commerce system design demo (Spring Boot microservices)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

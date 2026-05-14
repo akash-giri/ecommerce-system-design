@@ -4,6 +4,7 @@ $productId = 1000 + ($runId % 1000000)
 $email = "rahul+$runId@example.com"
 $authUsername = "admin-rahul-auth-$runId"
 $authEmail = "rahul-auth+$runId@example.com"
+$orderIdempotencyKey = "order-$runId"
 
 function Step($message) {
     Write-Host ""
@@ -193,6 +194,37 @@ function Wait-ForGatewayBackendReady {
     throw "Gateway backend routing did not become ready within $TimeoutSeconds seconds."
 }
 
+function Wait-ForGatewayAuthBackendReady {
+    param(
+        [int]$TimeoutSeconds = 180
+    )
+
+    $probeUri = "$baseUrl/auth/login"
+    $probeBody = @{
+        username = "gateway-readiness-probe"
+        password = "not-a-real-user"
+    } | ConvertTo-Json
+    $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+
+    while ((Get-Date) -lt $deadline) {
+        try {
+            Invoke-RestMethod -Method Post -Uri $probeUri -ContentType "application/json" -Body $probeBody | Out-Null
+            Write-Host "Gateway auth backend routing is ready." -ForegroundColor Green
+            return
+        } catch {
+            $statusCode = Get-HttpStatusCode $_
+            if ($statusCode -in 400, 401) {
+                Write-Host "Gateway auth backend routing is ready." -ForegroundColor Green
+                return
+            }
+        }
+
+        Start-Sleep -Seconds 2
+    }
+
+    throw "Gateway auth backend routing did not become ready within $TimeoutSeconds seconds."
+}
+
 Step "0. Wait for services to be ready"
 Wait-ForHealthyEndpoint -Name "API gateway" -Uri "$baseUrl/actuator/health"
 Wait-ForHealthyEndpoint -Name "Auth service" -Uri "http://localhost:8084/actuator/health"
@@ -200,6 +232,7 @@ Wait-ForHealthyEndpoint -Name "User service" -Uri "http://localhost:8081/actuato
 Wait-ForHealthyEndpoint -Name "Order service" -Uri "http://localhost:8082/actuator/health"
 Wait-ForHealthyEndpoint -Name "Inventory service" -Uri "http://localhost:8083/actuator/health"
 Wait-ForGatewayRouting
+Wait-ForGatewayAuthBackendReady
 
 Step "1. Register and login auth user"
 $registerBody = @{
@@ -264,7 +297,9 @@ $inventoryBody = @{
     productName = "iPhone 15 Run $runId"
     availableQuantity = 10
 } | ConvertTo-Json
-$inventory = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/inventory" -Headers $authHeaders -ContentType "application/json" -Body $inventoryBody }
+$inventory = Invoke-StepRequestWithRetry -MaxAttempts 5 -InitialDelaySeconds 1 -Request {
+    Invoke-RestMethod -Method Post -Uri "$baseUrl/api/inventory" -Headers $authHeaders -ContentType "application/json" -Body $inventoryBody
+}
 
 Step "4. Check inventory before order"
 $inventoryBefore = Invoke-StepRequest { Invoke-RestMethod -Method Get -Uri "$baseUrl/api/inventory/$productId" -Headers $authHeaders }
@@ -276,8 +311,14 @@ $userBody = @{
     email = $email
     address = "Bangalore"
 } | ConvertTo-Json
-$user = Invoke-StepRequest { Invoke-RestMethod -Method Post -Uri "$baseUrl/api/users" -Headers $authHeaders -ContentType "application/json" -Body $userBody }
+$user = Invoke-StepRequestWithRetry -MaxAttempts 5 -InitialDelaySeconds 1 -Request {
+    Invoke-RestMethod -Method Post -Uri "$baseUrl/api/users" -Headers $authHeaders -ContentType "application/json" -Body $userBody
+}
 $userId = if ($null -ne $user) { $user.id } else { $null }
+
+if ($null -ne $authHeaders) {
+    Wait-ForGatewayBackendReady -Uri "$baseUrl/api/orders/0" -Headers $authHeaders
+}
 
 Step "6. Place order"
 $orderBody = @{
@@ -290,7 +331,12 @@ if ($null -ne $userId) {
     # On cold start, the gateway may briefly return 503 (timeout/circuit-breaker) even though the backend is coming up.
     # Retrying makes this flow deterministic for demos.
     $order = Invoke-StepRequestWithRetry -MaxAttempts 5 -InitialDelaySeconds 1 -Request {
-        Invoke-RestMethod -Method Post -Uri "$baseUrl/api/orders" -Headers $authHeaders -ContentType "application/json" -Body $orderBody
+        $orderHeaders = @{}
+        foreach ($key in $authHeaders.Keys) {
+            $orderHeaders[$key] = $authHeaders[$key]
+        }
+        $orderHeaders["Idempotency-Key"] = $orderIdempotencyKey
+        Invoke-RestMethod -Method Post -Uri "$baseUrl/api/orders" -Headers $orderHeaders -ContentType "application/json" -Body $orderBody
     }
     $orderId = if ($null -ne $order) { $order.orderId } else { $null }
 } else {

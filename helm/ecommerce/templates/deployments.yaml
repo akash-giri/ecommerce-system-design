@@ -1,0 +1,66 @@
+{{- range $svcName, $svc := .Values.services }}
+{{- if $svc.enabled }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $svcName }}
+  namespace: {{ include "ecommerce.namespace" $ }}
+  labels:
+    {{- include "ecommerce.labels" $ | nindent 4 }}
+    app.kubernetes.io/component: {{ $svcName }}
+spec:
+  replicas: {{ $.Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: {{ $.Release.Name }}
+      app.kubernetes.io/component: {{ $svcName }}
+  template:
+    metadata:
+      labels:
+        {{- include "ecommerce.labels" $ | nindent 8 }}
+        app.kubernetes.io/component: {{ $svcName }}
+    spec:
+      {{- if $.Values.serviceAccount.create }}
+      serviceAccountName: {{ default (include "ecommerce.fullname" $) $.Values.serviceAccount.name }}
+      {{- else if $.Values.serviceAccount.name }}
+      serviceAccountName: {{ $.Values.serviceAccount.name }}
+      {{- end }}
+      containers:
+        - name: {{ $svcName }}
+          {{- $repo := (default (printf "%s-%s" $.Values.image.repositoryPrefix $svcName) $svc.image.repository) }}
+          {{- $tag := (default $.Values.image.tag $svc.image.tag) }}
+          image: "{{ $repo }}:{{ $tag }}"
+          imagePullPolicy: {{ $.Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ $svc.port }}
+          env:
+            {{- range $k, $v := $svc.env }}
+            - name: {{ $k }}
+              value: {{ $v | quote }}
+            {{- end }}
+          {{- if or (not (hasKey $svc "probesEnabled")) $svc.probesEnabled }}
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: {{ $svc.actuatorPort | default $svc.port }}
+            initialDelaySeconds: {{ $.Values.probes.readiness.initialDelaySeconds }}
+            periodSeconds: {{ $.Values.probes.readiness.periodSeconds }}
+            timeoutSeconds: {{ $.Values.probes.readiness.timeoutSeconds }}
+            failureThreshold: {{ $.Values.probes.readiness.failureThreshold }}
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: {{ $svc.actuatorPort | default $svc.port }}
+            initialDelaySeconds: {{ $.Values.probes.liveness.initialDelaySeconds }}
+            periodSeconds: {{ $.Values.probes.liveness.periodSeconds }}
+            timeoutSeconds: {{ $.Values.probes.liveness.timeoutSeconds }}
+            failureThreshold: {{ $.Values.probes.liveness.failureThreshold }}
+          {{- end }}
+          {{- if $.Values.resources }}
+          resources:
+            {{- toYaml $.Values.resources | nindent 12 }}
+          {{- end }}
+{{- end }}
+{{- end }}

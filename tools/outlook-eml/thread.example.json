@@ -1,0 +1,31 @@
+{
+  "subject": "Re: Resignation from Software Engineer role",
+  "thread_topic": "Resignation from Software Engineer role",
+  "timezone_offset_minutes": 330,
+  "from": { "name": "Harshada", "email": "harshada@happiestminds.com" },
+  "to": [
+    { "name": "Mrinal Kumar", "email": "mrinal.kumar@happiestminds.com" },
+    { "name": "Pawan", "email": "pawan@happiestminds.com" }
+  ],
+  "date": "2026-03-31T10:58:00+05:30",
+  "body": "This looks good.",
+  "previous_messages": [
+    {
+      "from": { "name": "Pawan", "email": "pawan@happiestminds.com" },
+      "sent_iso": "2026-03-30T13:58:00+05:30",
+      "to": [
+        { "name": "Mrinal Kumar", "email": "mrinal.kumar@happiestminds.com" },
+        { "name": "Harshada", "email": "harshada@happiestminds.com" }
+      ],
+      "subject": "Re: Resignation from Software Engineer role",
+      "body": "Hi Mrinal,\n\nYour resignation is accepted.\nConsidering the present business priorities, we would be setting your last working day as 29th May 2026.\nHarshada will further help if you have any questions on the process.\n\nRegards\nPawan"
+    },
+    {
+      "from": { "name": "Mrinal Kumar", "email": "mrinal.kumar@happiestminds.com" },
+      "sent_iso": "2026-03-30T12:51:00+05:30",
+      "to": [{ "name": "Pawan", "email": "pawan@happiestminds.com" }],
+      "subject": "Resignation from Software Engineer role",
+      "body": "Hey Pawan,\n\nI am writing to formally resign from my position as a Software Engineer at Happiest Minds, effective today.\nCould you please let me know what my last working day will be?\n\nThanks,\nMrinal Kumar."
+    }
+  ]
+}

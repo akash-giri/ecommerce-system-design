@@ -39,12 +39,44 @@ services:
       - "9090:9090"
     volumes:
       - "./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro"
+      - "./observability/prometheus/rules:/etc/prometheus/rules:ro"
     depends_on:
       - api-gateway
       - auth-service
       - user-service
       - order-service
       - inventory-service
+
+  alertmanager:
+    image: prom/alertmanager:v0.27.0
+    container_name: alertmanager
+    ports:
+      - "9093:9093"
+    volumes:
+      - "./observability/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro"
+    command:
+      - "--config.file=/etc/alertmanager/alertmanager.yml"
+    depends_on:
+      - prometheus
+
+  loki:
+    image: grafana/loki:3.1.1
+    container_name: loki
+    ports:
+      - "3100:3100"
+    command:
+      - "-config.file=/etc/loki/local-config.yaml"
+
+  promtail:
+    image: grafana/promtail:3.1.1
+    container_name: promtail
+    volumes:
+      - "./observability/promtail/promtail-config.yml:/etc/promtail/config.yml:ro"
+      - "./logs:/workspace-logs"
+    command:
+      - "-config.file=/etc/promtail/config.yml"
+    depends_on:
+      - loki
 
   grafana:
     image: grafana/grafana:11.1.0
@@ -60,6 +92,7 @@ services:
       - "./observability/grafana/dashboards:/var/lib/grafana/dashboards:ro"
     depends_on:
       - prometheus
+      - loki
 
   jaeger:
     image: jaegertracing/all-in-one:1.59
@@ -154,6 +187,9 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
+      LOGGING_FILE_NAME: /logs/api-gateway.log
+    volumes:
+      - "./logs:/logs"
 
   auth-service:
     build:
@@ -179,6 +215,9 @@ services:
       JWT_SECRET: TXlTdXBlclNlY3JldEtleUZvckp3dFNpZ25pbmdNeVN1cGVyU2VjcmV0S2V5MTIzNDU2Nzg5MDE=
       GATEWAY_SECRET: dev-gateway-secret
       OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
+      LOGGING_FILE_NAME: /logs/auth-service.log
+    volumes:
+      - "./logs:/logs"
 
   user-service:
     build:
@@ -200,6 +239,9 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       GATEWAY_SECRET: dev-gateway-secret
       OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
+      LOGGING_FILE_NAME: /logs/user-service.log
+    volumes:
+      - "./logs:/logs"
 
   order-service:
     build:
@@ -223,6 +265,9 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       GATEWAY_SECRET: dev-gateway-secret
       OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
+      LOGGING_FILE_NAME: /logs/order-service.log
+    volumes:
+      - "./logs:/logs"
 
   inventory-service:
     build:
@@ -244,3 +289,6 @@ services:
       CONFIG_SERVER_URL: http://config-server:8888
       GATEWAY_SECRET: dev-gateway-secret
       OTLP_TRACING_ENDPOINT: http://jaeger:4318/v1/traces
+      LOGGING_FILE_NAME: /logs/inventory-service.log
+    volumes:
+      - "./logs:/logs"

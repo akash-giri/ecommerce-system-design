@@ -1,0 +1,48 @@
+groups:
+  - name: "spring-boot-microservices"
+    rules:
+      - alert: ServiceDown
+        expr: up == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Service down: {{ $labels.job }}"
+          description: "Prometheus scrape target is down (job={{ $labels.job }}, instance={{ $labels.instance }})."
+
+      - alert: High5xxErrorRate
+        expr: |
+          sum(rate(http_server_requests_seconds_count{status=~"5.."}[2m]))
+          /
+          sum(rate(http_server_requests_seconds_count[2m]))
+          > 0.05
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High 5xx error ratio (>5%)"
+          description: "More than 5% of HTTP responses are 5xx across services for 2 minutes."
+
+      - alert: HighLatencyP95
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum by (le) (rate(http_server_requests_seconds_bucket[5m]))
+          ) > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High latency p95 (>1s)"
+          description: "HTTP p95 latency across services is above 1s for 5 minutes."
+
+      - alert: GatewayRateLimited
+        expr: |
+          sum(rate(http_server_requests_seconds_count{application="api-gateway", status="429"}[2m])) > 1
+        for: 2m
+        labels:
+          severity: info
+        annotations:
+          summary: "Gateway is rate limiting (429s detected)"
+          description: "API Gateway is returning 429 responses. This may indicate load testing or abusive traffic."
+
