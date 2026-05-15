@@ -1,0 +1,157 @@
+{{- if and .Values.deps.observability.enabled .Values.deps.observability.prometheus.image }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: prometheus
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 15s
+      evaluation_interval: 15s
+
+    rule_files:
+      - /etc/prometheus/rules/alerts.yml
+
+    scrape_configs:
+      - job_name: "prometheus"
+        static_configs:
+          - targets: ["localhost:9090"]
+
+      {{- range $svcName, $svc := .Values.services }}
+      {{- if $svc.enabled }}
+      - job_name: {{ $svcName | quote }}
+        metrics_path: /actuator/prometheus
+        scheme: http
+        static_configs:
+          - targets: [{{ printf "%s:%v" $svcName $svc.port | quote }}]
+      {{- end }}
+      {{- end }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-rules
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: prometheus
+data:
+  alerts.yml: |
+    groups:
+      - name: "ecommerce-basic"
+        rules:
+          - alert: "ServiceDown"
+            expr: up == 0
+            for: 1m
+            labels:
+              severity: "critical"
+            annotations:
+              summary: "Service down ({{ $labels.job }})"
+              description: "Prometheus cannot scrape {{ $labels.job }} for more than 1 minute."
+
+          - alert: "High5xxRate"
+            expr: |
+              sum(rate(http_server_requests_seconds_count{status=~"5.."}[2m])) by (job)
+              /
+              clamp_min(sum(rate(http_server_requests_seconds_count[2m])) by (job), 0.001)
+              > 0.05
+            for: 2m
+            labels:
+              severity: "warning"
+            annotations:
+              summary: "High 5xx rate ({{ $labels.job }})"
+              description: "More than 5% of requests are 5xx for {{ $labels.job }}."
+
+          - alert: "HighLatencyP95"
+            expr: |
+              histogram_quantile(
+                0.95,
+                sum(rate(http_server_requests_seconds_bucket[5m])) by (le, job)
+              ) > 1
+            for: 5m
+            labels:
+              severity: "warning"
+            annotations:
+              summary: "High p95 latency ({{ $labels.job }})"
+              description: "p95 latency is > 1s for {{ $labels.job }}."
+
+          - alert: "HighJvmHeapUsage"
+            expr: |
+              (
+                sum(jvm_memory_used_bytes{area="heap"}) by (job)
+                /
+                clamp_min(sum(jvm_memory_max_bytes{area="heap"}) by (job), 1)
+              ) > 0.85
+            for: 5m
+            labels:
+              severity: "warning"
+            annotations:
+              summary: "High JVM heap usage ({{ $labels.job }})"
+              description: "Heap usage > 85% for {{ $labels.job }}."
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: prometheus
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: prometheus
+  ports:
+    - name: http
+      port: 9090
+      targetPort: 9090
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: prometheus
+  template:
+    metadata:
+      labels:
+        {{- include "ecommerce.labels" . | nindent 8 }}
+        app.kubernetes.io/component: prometheus
+    spec:
+      containers:
+        - name: prometheus
+          image: {{ .Values.deps.observability.prometheus.image | quote }}
+          imagePullPolicy: IfNotPresent
+          args:
+            - "--config.file=/etc/prometheus/prometheus.yml"
+            - "--storage.tsdb.path=/prometheus"
+          ports:
+            - name: http
+              containerPort: 9090
+          volumeMounts:
+            - name: config
+              mountPath: /etc/prometheus
+            - name: rules
+              mountPath: /etc/prometheus/rules
+      volumes:
+        - name: config
+          configMap:
+            name: prometheus-config
+        - name: rules
+          configMap:
+            name: prometheus-rules
+{{- end }}

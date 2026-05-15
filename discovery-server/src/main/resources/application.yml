@@ -11,7 +11,10 @@ eureka:
     fetch-registry: false
 
 management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health,info,prometheus

@@ -1,0 +1,94 @@
+{{- if and .Values.deps.observability.enabled .Values.deps.observability.grafana.image }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: grafana
+data:
+  datasource.yaml: |
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        url: http://prometheus:9090
+        isDefault: true
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: grafana
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: grafana
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: grafana
+  ports:
+    - name: http
+      port: 3000
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: grafana
+  template:
+    metadata:
+      labels:
+        {{- include "ecommerce.labels" . | nindent 8 }}
+        app.kubernetes.io/component: grafana
+    spec:
+      containers:
+        - name: grafana
+          image: {{ .Values.deps.observability.grafana.image | quote }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 3000
+          env:
+            - name: GF_SECURITY_ADMIN_USER
+              value: {{ .Values.deps.observability.grafana.adminUser | quote }}
+            - name: GF_SECURITY_ADMIN_PASSWORD
+              value: {{ .Values.deps.observability.grafana.adminPassword | quote }}
+          volumeMounts:
+            - name: datasources
+              mountPath: /etc/grafana/provisioning/datasources
+            - name: dashboard-provider
+              mountPath: /etc/grafana/provisioning/dashboards
+            - name: dashboards
+              mountPath: /var/lib/grafana/dashboards/ecommerce
+      volumes:
+        - name: datasources
+          configMap:
+            name: grafana-datasources
+            items:
+              - key: datasource.yaml
+                path: datasource.yaml
+        - name: dashboard-provider
+          configMap:
+            name: grafana-dashboard-provider
+            items:
+              - key: provider.yaml
+                path: provider.yaml
+        - name: dashboards
+          configMap:
+            name: grafana-dashboard-ecommerce
+{{- end }}

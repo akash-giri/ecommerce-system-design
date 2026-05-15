@@ -62,6 +62,9 @@ resilience4j:
         wait-duration: 500ms
 
 management:
+  metrics:
+    tags:
+      application: ${spring.application.name}
   tracing:
     sampling:
       probability: 1.0

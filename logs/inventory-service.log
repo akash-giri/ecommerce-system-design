@@ -567,3 +567,1184 @@ org.springframework.http.converter.HttpMessageNotWritableException: No converter
 2026-05-14T16:12:09.177Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-05-14T16:17:09.115Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
 2026-05-14T16:22:09.069Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T16:27:09.044Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T16:32:09.012Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T16:37:08.964Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T16:42:08.936Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T16:47:08.877Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T16:52:08.831Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T16:57:08.790Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:02:08.731Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:07:08.675Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:12:08.629Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:17:08.586Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:22:08.560Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:27:08.538Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:32:08.519Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:37:08.499Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:42:08.485Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:47:08.463Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:52:08.430Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T17:57:08.397Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:02:08.368Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:07:08.337Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:12:08.299Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:17:08.264Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:22:08.228Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:27:08.082Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:32:08.038Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:37:07.902Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:42:05.777Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:47:02.042Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:52:01.968Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T18:57:01.531Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:02:01.046Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:04:20.597Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [cluster-ClusterId{value='6a059de40c1d7f415a5635ca', description='null'}-mongo-inventory:27017] [                                                 ] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server mongo-inventory:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:728) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:606) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:451) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:404) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:221) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:153) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(Unknown Source) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Unknown Source) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:175) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:200) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:739) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:603) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	... 5 common frames omitted
+
+2026-05-14T19:04:21.430Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [cluster-ClusterId{value='6a059de40c1d7f415a5635ca', description='null'}-mongo-inventory:27017] [                                                 ] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=mongo-inventory:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=57803922}
+2026-05-14T19:07:00.170Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:09:41.533Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+2026-05-14T19:09:41.912Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Requesting disconnect from last known coordinator kafka:9092 (id: 2147483646 rack: null)
+2026-05-14T19:09:42.065Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Client requested disconnect from node 2147483646
+2026-05-14T19:09:44.477Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2026-05-14T19:09:49.243Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2026-05-14T19:09:52.703Z  WARN [inventory-service,trace=d0d01699aae9b2de4b501c54a4029808,span=4d6ae2f1aa6dfddd] 1 --- [inventory-service] [http-nio-8083-exec-1] [d0d01699aae9b2de4b501c54a4029808-4d6ae2f1aa6dfddd] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.ecommerce.inventory.exception.GlobalExceptionHandler#handleUnexpected(Exception, HttpServletRequest)
+
+org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class com.ecommerce.inventory.exception.ApiErrorResponse] with preset Content-Type 'application/openmetrics-text;version=1.0.0;charset=utf-8'
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:319) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:245) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:136) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T19:09:53.430Z  WARN [inventory-service,trace=d0d01699aae9b2de4b501c54a4029808,span=4d6ae2f1aa6dfddd] 1 --- [inventory-service] [http-nio-8083-exec-1] [d0d01699aae9b2de4b501c54a4029808-4d6ae2f1aa6dfddd] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.context.request.async.AsyncRequestNotUsableException: ServletOutputStream failed to write: java.io.IOException: Broken pipe]
+2026-05-14T19:10:00.939Z  WARN [inventory-service,trace=42fc4cc468243d21d8b782391eb924b6,span=c545a7fd591b587a] 1 --- [inventory-service] [http-nio-8083-exec-5] [42fc4cc468243d21d8b782391eb924b6-c545a7fd591b587a] .m.m.a.ExceptionHandlerExceptionResolver : Failure in @ExceptionHandler com.ecommerce.inventory.exception.GlobalExceptionHandler#handleUnexpected(Exception, HttpServletRequest)
+
+org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class com.ecommerce.inventory.exception.ApiErrorResponse] with preset Content-Type 'application/openmetrics-text;version=1.0.0;charset=utf-8'
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:319) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor.handleReturnValue(HttpEntityMethodProcessor.java:245) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:136) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:432) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:74) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:175) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1357) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1160) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.6.jar!/:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar!/:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T19:10:01.039Z  WARN [inventory-service,trace=42fc4cc468243d21d8b782391eb924b6,span=c545a7fd591b587a] 1 --- [inventory-service] [http-nio-8083-exec-5] [42fc4cc468243d21d8b782391eb924b6-c545a7fd591b587a] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.context.request.async.AsyncRequestNotUsableException: ServletOutputStream failed to write: java.io.IOException: Broken pipe]
+2026-05-14T19:11:34.719Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [cluster-ClusterId{value='6a059de40c1d7f415a5635ca', description='null'}-mongo-inventory:27017] [                                                 ] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server mongo-inventory:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:728) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:606) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:451) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:404) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:221) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:153) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(Unknown Source) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Unknown Source) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:175) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:200) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:739) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:603) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	... 5 common frames omitted
+
+2026-05-14T19:11:35.277Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [cluster-ClusterId{value='6a059de40c1d7f415a5635ca', description='null'}-mongo-inventory:27017] [                                                 ] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=mongo-inventory:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=48251405}
+2026-05-14T19:13:15.439Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:18:11.382Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:23:09.525Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:28:08.844Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:33:05.656Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:38:05.663Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:43:05.669Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:48:05.681Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:51:57.682Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/} exception=I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: discovery-server: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(Unknown Source)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:143)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 19 more
+
+2026-05-14T19:51:57.685Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution
+2026-05-14T19:51:57.719Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution succeeded on retry #1
+2026-05-14T19:53:05.702Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:56:57.944Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/} exception=I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: discovery-server: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(Unknown Source)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:143)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 19 more
+
+2026-05-14T19:56:57.946Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution
+2026-05-14T19:56:57.998Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution succeeded on retry #1
+2026-05-14T19:57:58.081Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/} exception=I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: discovery-server: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(Unknown Source)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:143)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 19 more
+
+2026-05-14T19:57:58.082Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution
+2026-05-14T19:57:58.158Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution succeeded on retry #1
+2026-05-14T19:58:05.724Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T19:58:58.263Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/} exception=I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: discovery-server: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(Unknown Source)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:143)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 19 more
+
+2026-05-14T19:58:58.265Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on PUT request for "http://discovery-server:8761/eureka/apps/INVENTORY-SERVICE/01175857033f:inventory-service:8083": discovery-server: Temporary failure in name resolution
+2026-05-14T19:58:58.380Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution succeeded on retry #1
+2026-05-14T19:59:58.790Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-CacheRefreshExecutor-0] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/} exception=I/O error on GET request for "http://discovery-server:8761/eureka/apps/delta": discovery-server: Temporary failure in name resolution stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://discovery-server:8761/eureka/apps/delta": discovery-server: Temporary failure in name resolution
+	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: discovery-server: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(Unknown Source)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(Unknown Source)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source)
+	at org.apache.hc.client5.http.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:43)
+	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:143)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	... 22 more
+
+2026-05-14T19:59:58.895Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-CacheRefreshExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://discovery-server:8761/eureka/apps/delta": discovery-server: Temporary failure in name resolution
+2026-05-14T20:03:09.882Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T20:05:40.362Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Disconnecting from node 2147483646 due to request timeout.
+2026-05-14T20:06:50.870Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58632 due to node 2147483646 being disconnected (elapsed time since creation: 36149ms, elapsed time since send: 36000ms, request timeout: 30000ms)
+2026-05-14T20:00:17.585Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [cluster-ClusterId{value='6a059de40c1d7f415a5635ca', description='null'}-mongo-inventory:27017] [                                                 ] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server mongo-inventory:27017
+
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:728) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:606) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:451) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:404) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:221) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:153) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(Unknown Source) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(Unknown Source) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Unknown Source) ~[na:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:175) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:200) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:739) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:603) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	... 5 common frames omitted
+
+2026-05-14T20:08:59.238Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58634 due to node 2147483646 being disconnected (elapsed time since creation: 33147ms, elapsed time since send: 33132ms, request timeout: 30000ms)
+2026-05-14T20:09:51.486Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58636 due to node 2147483646 being disconnected (elapsed time since creation: 30123ms, elapsed time since send: 29950ms, request timeout: 30000ms)
+2026-05-14T20:09:35.402Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-producer-network-thread | producer-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Disconnecting from node 1 due to request timeout.
+2026-05-14T20:09:56.434Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T20:10:03.053Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58637 due to node 2147483646 being disconnected (elapsed time since creation: 27036ms, elapsed time since send: 26957ms, request timeout: 30000ms)
+2026-05-14T20:10:14.941Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58638 due to node 2147483646 being disconnected (elapsed time since creation: 23769ms, elapsed time since send: 23443ms, request timeout: 30000ms)
+2026-05-14T20:10:21.621Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58639 due to node 2147483646 being disconnected (elapsed time since creation: 20209ms, elapsed time since send: 19967ms, request timeout: 30000ms)
+2026-05-14T20:10:35.607Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58641 due to node 2147483646 being disconnected (elapsed time since creation: 16826ms, elapsed time since send: 16288ms, request timeout: 30000ms)
+2026-05-14T20:03:39.038Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-1] [                                                 ] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.FutureTask.get(Unknown Source) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T20:10:09.340Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-producer-network-thread | producer-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Cancelled in-flight METADATA request with correlation id 94 due to node 1 being disconnected (elapsed time since creation: 78099ms, elapsed time since send: 78099ms, request timeout: 30000ms)
+2026-05-14T20:10:54.933Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58642 due to node 2147483646 being disconnected (elapsed time since creation: 12955ms, elapsed time since send: 12581ms, request timeout: 30000ms)
+2026-05-14T20:03:33.169Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-0] [                                                 ] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.FutureTask.get(Unknown Source) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T20:11:18.649Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58643 due to node 2147483646 being disconnected (elapsed time since creation: 9861ms, elapsed time since send: 9821ms, request timeout: 30000ms)
+2026-05-14T20:13:32.483Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight HEARTBEAT request with correlation id 58644 due to node 2147483646 being disconnected (elapsed time since creation: 1991ms, elapsed time since send: 1919ms, request timeout: 30000ms)
+2026-05-14T20:15:48.275Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T20:26:24.980Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T20:27:24.890Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Group coordinator kafka:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: null. isDisconnected: true. Rediscovery will be attempted.
+2026-05-14T20:37:19.560Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-executor-0] [                                                 ] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2026-05-14T20:41:48.179Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 572626ms
+2026-05-14T20:43:30.972Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 906963ms
+2026-05-14T20:44:46.974Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 979894ms
+2026-05-14T20:20:02.987Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [cluster-ClusterId{value='6a059de40c1d7f415a5635ca', description='null'}-mongo-inventory:27017] [                                                 ] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server mongo-inventory:27017
+
+com.mongodb.MongoSocketException: mongo-inventory
+	at com.mongodb.ServerAddress.getSocketAddresses(ServerAddress.java:221) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.ServerAddressWithResolver.getSocketAddresses(ServerAddressWithResolver.java:68) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:100) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:78) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:211) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:153) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.net.UnknownHostException: mongo-inventory
+	at java.base/java.net.InetAddress$CachedAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at com.mongodb.ServerAddress.getSocketAddresses(ServerAddress.java:213) ~[mongodb-driver-core-4.11.2.jar!/:na]
+	... 7 common frames omitted
+
+2026-05-14T20:52:05.944Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 1293802ms
+2026-05-14T20:54:51.949Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 1596546ms
+2026-05-14T20:57:29.702Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 1704718ms
+2026-05-14T21:05:03.393Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 1983161ms
+2026-05-14T21:05:33.745Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 2244786ms
+2026-05-14T21:06:10.105Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Consumer has been disconnected from the group coordinator for 2272967ms
+2026-05-14T20:54:57.919Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-1] [                                                 ] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.FutureTask.get(Unknown Source) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:31.090Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] o.a.h.c.h.i.c.HttpRequestRetryExec       : Recoverable I/O exception (org.apache.hc.core5.http.NoHttpResponseException) caught when processing request to {}->http://discovery-server:8761
+2026-05-14T20:45:04.476Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [AsyncResolver-bootstrap-0] [                                                 ] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.FutureTask.get(Unknown Source) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:32.190Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Disconnecting from node 1 due to request timeout.
+2026-05-14T21:06:32.227Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Cancelled in-flight METADATA request with correlation id 58646 due to node 1 being disconnected (elapsed time since creation: 3948625ms, elapsed time since send: 3948625ms, request timeout: 30000ms)
+2026-05-14T21:06:30.935Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-0] [                                                 ] c.netflix.discovery.TimedSupervisorTask  : task supervisor timed out
+
+java.util.concurrent.TimeoutException: null
+	at java.base/java.util.concurrent.FutureTask.get(Unknown Source) ~[na:na]
+	at com.netflix.discovery.TimedSupervisorTask.run(TimedSupervisorTask.java:68) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T20:45:36.012Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-producer-network-thread | producer-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Error connecting to node kafka:9092 (id: 1 rack: null)
+
+java.net.UnknownHostException: kafka: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:122) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.resolveAddresses(ClusterConnectionStates.java:537) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:512) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:467) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:1030) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1203) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1091) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:569) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.producer.internals.Sender.runOnce(Sender.java:344) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:247) ~[kafka-clients-3.6.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:31.694Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-CacheRefreshExecutor-0] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/}, exception=null stacktrace=java.util.concurrent.CancellationException
+	at org.apache.hc.core5.concurrent.BasicFuture.getResult(BasicFuture.java:75)
+	at org.apache.hc.core5.concurrent.BasicFuture.get(BasicFuture.java:96)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:184)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:178)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$3.get(PoolingHttpClientConnectionManager.java:312)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:109)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+2026-05-14T21:06:32.423Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/} exception=null stacktrace=java.util.concurrent.CancellationException
+	at org.apache.hc.core5.concurrent.BasicFuture.getResult(BasicFuture.java:75)
+	at org.apache.hc.core5.concurrent.BasicFuture.get(BasicFuture.java:96)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:184)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:178)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$3.get(PoolingHttpClientConnectionManager.java:312)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:109)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:91)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+2026-05-14T21:06:32.597Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-CacheRefreshExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: null
+2026-05-14T21:06:32.638Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-producer-network-thread | producer-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Error connecting to node kafka:9092 (id: 1 rack: null)
+
+java.net.UnknownHostException: kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:122) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.resolveAddresses(ClusterConnectionStates.java:537) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:512) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:467) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:1030) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1203) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1091) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:569) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.producer.internals.Sender.runOnce(Sender.java:344) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:247) ~[kafka-clients-3.6.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:32.598Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: null
+2026-05-14T21:06:33.156Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-producer-network-thread | producer-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Error connecting to node kafka:9092 (id: 1 rack: null)
+
+java.net.UnknownHostException: kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:122) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.resolveAddresses(ClusterConnectionStates.java:537) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:512) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:467) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:1030) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1203) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1091) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:569) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.producer.internals.Sender.runOnce(Sender.java:344) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:247) ~[kafka-clients-3.6.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:32.621Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Error connecting to node kafka:9092 (id: 1 rack: null)
+
+java.net.UnknownHostException: kafka: Temporary failure in name resolution
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAddressesFromNameService(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:122) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.resolveAddresses(ClusterConnectionStates.java:537) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:512) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:467) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:1030) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1203) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1091) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:569) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:280) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:251) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:242) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.awaitMetadataUpdate(ConsumerNetworkClient.java:164) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:277) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureCoordinatorReady(AbstractCoordinator.java:240) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.coordinatorUnknownAndUnreadySync(ConsumerCoordinator.java:504) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerCoordinator.poll(ConsumerCoordinator.java:536) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.updateAssignmentMetadataIfNeeded(KafkaConsumer.java:1220) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1179) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.KafkaConsumer.poll(KafkaConsumer.java:1159) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollConsumer(KafkaMessageListenerContainer.java:1666) ~[spring-kafka-3.1.4.jar!/:3.1.4]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.doPoll(KafkaMessageListenerContainer.java:1641) ~[spring-kafka-3.1.4.jar!/:3.1.4]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.pollAndInvoke(KafkaMessageListenerContainer.java:1439) ~[spring-kafka-3.1.4.jar!/:3.1.4]
+	at org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer.run(KafkaMessageListenerContainer.java:1330) ~[spring-kafka-3.1.4.jar!/:3.1.4]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:33.628Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-CacheRefreshExecutor-0] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVENTORY-SERVICE/01175857033f:inventory-service:8083 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+2026-05-14T21:06:33.645Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-producer-network-thread | producer-1] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Error connecting to node kafka:9092 (id: 1 rack: null)
+
+java.net.UnknownHostException: kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:122) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.resolveAddresses(ClusterConnectionStates.java:537) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:512) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:467) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:1030) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1203) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1091) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:569) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.producer.internals.Sender.runOnce(Sender.java:344) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.producer.internals.Sender.run(Sender.java:247) ~[kafka-clients-3.6.2.jar!/:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:33.714Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-1] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/}, exception=null stacktrace=java.util.concurrent.CancellationException
+	at org.apache.hc.core5.concurrent.BasicFuture.getResult(BasicFuture.java:75)
+	at org.apache.hc.core5.concurrent.BasicFuture.get(BasicFuture.java:96)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:184)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:178)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$3.get(PoolingHttpClientConnectionManager.java:312)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:109)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+2026-05-14T21:06:33.805Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-1] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: null
+2026-05-14T21:06:33.736Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Error connecting to node kafka:9092 (id: 1 rack: null)
+
+java.net.UnknownHostException: kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:122) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.resolveAddresses(ClusterConnectionStates.java:537) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:512) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:467) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:1030) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1203) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1091) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:569) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:280) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.pollNoWakeup(ConsumerNetworkClient.java:321) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$HeartbeatThread.run(AbstractCoordinator.java:1460) ~[kafka-clients-3.6.2.jar!/:na]
+
+2026-05-14T21:06:33.881Z ERROR [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-1] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVENTORY-SERVICE/01175857033f:inventory-service:8083 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:34.040Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Error connecting to node kafka:9092 (id: 1 rack: null)
+
+java.net.UnknownHostException: kafka
+	at java.base/java.net.InetAddress$CachedAddresses.get(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName0(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at java.base/java.net.InetAddress.getAllByName(Unknown Source) ~[na:na]
+	at org.apache.kafka.clients.DefaultHostResolver.resolve(DefaultHostResolver.java:27) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClientUtils.resolve(ClientUtils.java:122) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.resolveAddresses(ClusterConnectionStates.java:537) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.currentAddress(ClusterConnectionStates.java:512) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates$NodeConnectionState.access$200(ClusterConnectionStates.java:467) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.ClusterConnectionStates.currentAddress(ClusterConnectionStates.java:173) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.initiateConnect(NetworkClient.java:1030) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.access$600(NetworkClient.java:73) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1203) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient$DefaultMetadataUpdater.maybeUpdate(NetworkClient.java:1091) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:569) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.poll(ConsumerNetworkClient.java:280) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient.pollNoWakeup(ConsumerNetworkClient.java:321) ~[kafka-clients-3.6.2.jar!/:na]
+	at org.apache.kafka.clients.consumer.internals.AbstractCoordinator$HeartbeatThread.run(AbstractCoordinator.java:1460) ~[kafka-clients-3.6.2.jar!/:na]
+
+2026-05-14T21:06:34.111Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [kafka-coordinator-heartbeat-thread | inventory-service-group] [                                                 ] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-inventory-service-group-1, groupId=inventory-service-group] Error sending fetch request (sessionId=2121825771, epoch=50118) to node 1:
+
+org.apache.kafka.common.errors.DisconnectException: null
+
+2026-05-14T21:06:34.215Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/}, exception=null stacktrace=java.util.concurrent.CancellationException
+	at org.apache.hc.core5.concurrent.BasicFuture.getResult(BasicFuture.java:75)
+	at org.apache.hc.core5.concurrent.BasicFuture.get(BasicFuture.java:96)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:184)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:178)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$3.get(PoolingHttpClientConnectionManager.java:312)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:109)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.sendHeartBeat(RestTemplateEurekaHttpClient.java:99)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89)
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837)
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+2026-05-14T21:06:34.235Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: null
+2026-05-14T21:06:34.238Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-CacheRefreshExecutor-1] [                                                 ] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://discovery-server:8761/eureka/}, exception=null stacktrace=java.util.concurrent.CancellationException
+	at org.apache.hc.core5.concurrent.BasicFuture.getResult(BasicFuture.java:75)
+	at org.apache.hc.core5.concurrent.BasicFuture.get(BasicFuture.java:96)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:184)
+	at org.apache.hc.core5.pool.StrictConnPool$1.get(StrictConnPool.java:178)
+	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager$3.get(PoolingHttpClientConnectionManager.java:312)
+	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.acquireEndpoint(InternalExecRuntime.java:109)
+	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:125)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getDelta(RestTemplateEurekaHttpClient.java:155)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+2026-05-14T21:06:34.267Z  WARN [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-CacheRefreshExecutor-1] [                                                 ] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: null
+2026-05-14T21:06:34.250Z ERROR [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-HeartbeatExecutor-0] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVENTORY-SERVICE/01175857033f:inventory-service:8083 - was unable to send heartbeat!
+
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$3.execute(EurekaHttpClientDecorator.java:92) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.sendHeartBeat(EurekaHttpClientDecorator.java:89) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.DiscoveryClient.renew(DiscoveryClient.java:837) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at com.netflix.discovery.DiscoveryClient$HeartbeatThread.run(DiscoveryClient.java:1401) ~[eureka-client-2.0.2.jar!/:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+
+2026-05-14T21:06:34.274Z  INFO [inventory-service,trace=,span=] 1 --- [inventory-service] [DiscoveryClient-CacheRefreshExecutor-1] [                                                 ] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_INVENTORY-SERVICE/01175857033f:inventory-service:8083 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$7.execute(EurekaHttpClientDecorator.java:152)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getDelta(EurekaHttpClientDecorator.java:149)
+	at com.netflix.discovery.DiscoveryClient.getAndUpdateDelta(DiscoveryClient.java:1079)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:960)
+	at com.netflix.discovery.DiscoveryClient.refreshRegistry(DiscoveryClient.java:1475)
+	at com.netflix.discovery.DiscoveryClient$CacheRefreshThread.run(DiscoveryClient.java:1442)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+

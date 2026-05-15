@@ -59,6 +59,8 @@ spec:
           ports:
             - name: mysql
               containerPort: 3306
+          resources:
+            {{- toYaml $.Values.deps.mysql.resources | nindent 12 }}
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
@@ -78,6 +80,8 @@ spec:
                 - mysqladmin ping -uroot -p"$MYSQL_ROOT_PASSWORD"
             initialDelaySeconds: 20
             periodSeconds: 5
+            timeoutSeconds: 5
+            failureThreshold: 12
           livenessProbe:
             exec:
               command:
@@ -86,6 +90,8 @@ spec:
                 - mysqladmin ping -uroot -p"$MYSQL_ROOT_PASSWORD"
             initialDelaySeconds: 60
             periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 6
   volumeClaimTemplates:
     - metadata:
         name: data
@@ -99,4 +105,3 @@ spec:
             storage: {{ $.Values.deps.mysql.storageSize | quote }}
 {{- end }}
 {{- end }}
-

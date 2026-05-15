@@ -1,0 +1,57 @@
+{{- if and .Values.deps.observability.enabled .Values.deps.observability.jaeger.image }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jaeger
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: jaeger
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/component: jaeger
+  ports:
+    - name: ui
+      port: 16686
+      targetPort: 16686
+    - name: otlp-http
+      port: 4318
+      targetPort: 4318
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaeger
+  namespace: {{ include "ecommerce.namespace" . }}
+  labels:
+    {{- include "ecommerce.labels" . | nindent 4 }}
+    app.kubernetes.io/component: jaeger
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: {{ .Release.Name }}
+      app.kubernetes.io/component: jaeger
+  template:
+    metadata:
+      labels:
+        {{- include "ecommerce.labels" . | nindent 8 }}
+        app.kubernetes.io/component: jaeger
+    spec:
+      containers:
+        - name: jaeger
+          image: {{ .Values.deps.observability.jaeger.image | quote }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: ui
+              containerPort: 16686
+            - name: otlp-http
+              containerPort: 4318
+          env:
+            - name: COLLECTOR_OTLP_ENABLED
+              value: "true"
+{{- end }}
+

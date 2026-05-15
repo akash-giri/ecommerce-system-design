@@ -594,3 +594,88 @@ docker compose up -d
 ```powershell
 docker compose down
 ```
+
+## Kubernetes + Helm (Minikube)
+
+This project also supports a local Kubernetes demo using the Helm chart under `./helm/ecommerce`.
+
+### 1. Start Minikube
+
+```powershell
+minikube start --driver=docker
+kubectl create namespace ecommerce --dry-run=client -o yaml | kubectl apply -f -
+```
+
+### 2. Build Images (Local)
+
+```powershell
+docker compose build api-gateway auth-service discovery-server config-server user-service order-service inventory-service
+```
+
+### 3. Load Images Into Minikube
+
+Minikube frequently cannot pull public images reliably from inside the cluster (TLS timeouts), so we pre-load images.
+
+```powershell
+minikube image load newproject-api-gateway:latest
+minikube image load newproject-auth-service:latest
+minikube image load newproject-discovery-server:latest
+minikube image load newproject-config-server:latest
+minikube image load newproject-user-service:latest
+minikube image load newproject-order-service:latest
+minikube image load newproject-inventory-service:latest
+
+# Observability images
+docker pull prom/prometheus:v2.54.1
+docker pull grafana/grafana:11.1.0
+docker pull jaegertracing/all-in-one:1.57.0
+minikube image load prom/prometheus:v2.54.1
+minikube image load grafana/grafana:11.1.0
+minikube image load jaegertracing/all-in-one:1.57.0
+```
+
+### 4. Deploy With Helm
+
+```powershell
+helm upgrade --install ecommerce .\helm\ecommerce -n ecommerce
+```
+
+Wait until pods are running:
+
+```powershell
+kubectl get pods -n ecommerce
+```
+
+Note: on minikube, Spring apps may take a few minutes to warm up on the first boot.
+
+### 5. Open UIs (Port-Forward)
+
+Run each of these in a separate PowerShell window:
+
+```powershell
+kubectl port-forward -n ecommerce svc/api-gateway 8080:8080
+kubectl port-forward -n ecommerce svc/prometheus 9090:9090
+kubectl port-forward -n ecommerce svc/grafana 3000:3000
+kubectl port-forward -n ecommerce svc/jaeger 16686:16686
+```
+
+Open:
+
+- Gateway: `http://localhost:8080/actuator/health`
+- Prometheus: `http://localhost:9090`
+- Grafana: `http://localhost:3000` (admin/admin)
+- Jaeger: `http://localhost:16686`
+
+### 6. Generate Traffic
+
+Once the gateway is port-forwarded, run the existing flow script against `http://localhost:8080`:
+
+```powershell
+.\test-flow-clean.ps1
+```
+
+Then verify:
+
+- Prometheus Targets: `http://localhost:9090/targets`
+- Grafana Explore (Prometheus datasource)
+- Jaeger Traces (service names like `api-gateway`, `order-service`, etc.)
